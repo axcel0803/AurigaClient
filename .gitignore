@@ -1,0 +1,8 @@
+# Ignore everything in the root directory
+/*
+
+# But keep SystemEN folder and its contents
+!SystemEN/
+
+# Keep .gitignore itself
+!.gitignore
