@@ -6,3 +6,5 @@
 
 # Keep .gitignore itself
 !.gitignore
+SystemEN/test
+SystemEN/.claude/settings.local.json

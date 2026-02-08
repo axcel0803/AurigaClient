@@ -1,0 +1,79 @@
+-- Original translation works of zackdreaver: https://github.com/zackdreaver/ROenglishRE
+-- Continuated by llchrisll at https://github.com/llchrisll/ROenglishRE
+-- This file can be distributed, used and modified freely
+-- This file shouldn't be claimed as part of your project, unless you fork it from https://github.com/llchrisll/ROenglishRE
+-- Last updated: 20240624
+
+-- This is important for the adjusted function below for 2023+ clients,
+-- which supports the ^i[<ItemID>] feature, so if you don't have such client, leave it on 'false'.
+-- > false = Client doesn't support ^i[<ID>]
+-- > true = Client does support ^i[<ID>]
+iSupport = false
+
+tbl = {
+	[1] = {
+		Title = "Tipsについて",
+		Search = 1,
+		Image = "ﾀｯﾀ惕ﾎﾅﾍﾆ菎ﾌｽｺ\\tipbox\\img_noImage",
+		Imgcoord = { Position = 5, Size = 100 },
+		Page = {
+			"/tip や Alt+D または、基本ウィンドウのTipsボタンをクリックして、\\nTipsウィンドウを開くことができます。\\nTipsでは、ゲームを楽しむために役立つ情報を得ることができます。\\n\\nTipsリンク機能\：\\n「Tipsについて」の右にあるボタンをクリックすることで、チャットウィンドウに他のキャラクターが閲覧可能\なリンクが作成されます。\\n\\n^ff0000※後日、Tipsを順次アップデート予定です。^000000"
+		}
+	}
+}
+
+function main()
+	for DocumentNum, INFO in pairs(tbl) do
+		result, msg = AddTip(DocumentNum, INFO.Title, INFO.Search, INFO.Image)
+		if not result then
+			return false, msg
+		end
+		result, msg = AddImgcoord(DocumentNum, INFO.Imgcoord.Position, INFO.Imgcoord.Size)
+		if not result then
+			return false, msg
+		end
+		if not INFO.PageEX then
+			result, msg = AddPageEx(DocumentNum, -1, 0, 0, 0, 0, 0, 0, 0)
+			if not result then
+				return false, msg
+			end
+		else
+			for k, v in pairs(INFO.PageEX) do
+				result, msg = AddPageEx(DocumentNum, v.EffectNum, v.Twinkle, v.StartX, v.StartY, v.DistX, v.DistY, v.MoveTime)
+				if not result then
+					return false, msg
+				end
+			end
+		end
+		-- Dynamic display to show ^i[<ID>] for 2023 clients, otherwise use old <ITEM> tag instead
+		for k, v in pairs(INFO.Page) do
+			if iSupport == false then
+				if string.find(v,'%^i%[%d+%]') ~= nil then
+					v = string.gsub(v,'%^i%[%d+%]','')
+				end
+			elseif iSupport == true then
+				if string.find(v,'%^i%[%d+%]') ~= nil and string.find(v,'<ITEM>%[[^%]]+%]<INFO>%d+</INFO></ITEM>') ~= nil then
+					v = string.gsub(v,'<ITEM>%[[^%]]+%]<INFO>%d+</INFO></ITEM>','')
+				end
+			end
+			result, msg = AddPage(DocumentNum, v)
+			if not result then
+				return false, msg
+			end
+		end
+		--[[ New functions for ~2024-08 clients, not sure about the date
+		if not INFO.LinkTag then
+			result = AddIsTag(DocumentNum, 1)
+			if not result then
+				return false, msg
+			end
+		else
+			result = AddIsTag(DocumentNum, INFO.LinkTag)
+			if not result then
+				return false, msg
+			end
+		end
+		]]
+	end
+	return true, "good"
+end

@@ -1,0 +1,6037 @@
+-- Original translation works of zackdreaver: https://github.com/zackdreaver/ROenglishRE
+-- Continuated by llchrisll at https://github.com/llchrisll/ROenglishRE
+-- This file can be distributed, used and modified freely
+-- This file shouldn't be claimed as part of your project, unless you fork it from https://github.com/llchrisll/ROenglishRE
+-- Last updated: 20231021
+
+
+achievement_tbl = {
+	[500000] = {
+		UI_Type = 0,
+		group = "ADVENTURE",
+		major = 2,
+		minor = 0,
+		title = "ロックリッジ",
+		content = { summary = "牛賊団の問題を解決する", details = "クエスト「ロックリッジ」をクリア" },
+		resource = { [1] = { text = "ロックリッジ 完了" } },
+		reward = { title = 2000 },
+		score = 1
+	},
+	[500001] = {
+		UI_Type = 0,
+		group = "ADVENTURE",
+		major = 2,
+		minor = 0,
+		title = "住人たちの悩み～ロックリッジ～(1)",
+		content = { summary = "困っているロックリッジの人を助ける", details = "クエスト「困りもののワンちゃん」「愛犬の復讐」「荒野の厄介者」をクリア" },
+		resource = { [1] = { text = "困りもののワンちゃん 完了" }, [2] = { text = "愛犬の復讐 完了" }, [3] = { text = "荒野の厄介者 完了" } },
+		reward = {},
+		score = 1
+	},
+	[500002] = {
+		UI_Type = 0,
+		group = "ADVENTURE",
+		major = 2,
+		minor = 0,
+		title = "住人たちの悩み～ロックリッジ～(2)",
+		content = {
+			summary = "困っているロックリッジの人を助ける",
+			details = "クエスト「食材がない！」「異国の商人」「治安維持活動　初級」「原住民の頼み」をクリア"
+		},
+		resource = {
+			[1] = { text = "食材がない！ 完了" },
+			[2] = { text = "異国の商人 完了" },
+			[3] = { text = "治安維持活動　初級 完了" },
+			[4] = { text = "原住民の頼み 完了" }
+		},
+		reward = {},
+		score = 1
+	},
+	[500003] = {
+		UI_Type = 0,
+		group = "ADVENTURE",
+		major = 2,
+		minor = 0,
+		title = "住人たちの悩み～ロックリッジ～(3)",
+		content = {
+			summary = "困っているロックリッジの人を助ける",
+			details = "クエスト「ガスターアレルギー」「花火大会の準備」「治安維持活動　上級」「配管整備作業」「排水パイプ掃除」をクリア"
+		},
+		resource = {
+			[1] = { text = "ガスターアレルギー 完了" },
+			[2] = { text = "花火大会の準備 完了" },
+			[3] = { text = "治安維持活動　上級 完了" },
+			[4] = { text = "配管整備作業 完了" },
+			[5] = { text = "排水パイプ掃除 完了" }
+		},
+		reward = {},
+		score = 1
+	},
+	[500004] = {
+		UI_Type = 0,
+		group = "ADVENTURE",
+		major = 2,
+		minor = 0,
+		title = "開拓地の何でも屋",
+		content = { summary = "ロックリッジのクエストをクリア", details = "住人たちの悩み～ロックリッジ～(1)～(3)をクリア" },
+		resource = {
+			[1] = { text = "住人たちの悩み～ロックリッジ～(1) 完了", shortcut = 500001 },
+			[2] = { text = "住人たちの悩み～ロックリッジ～(2) 完了", shortcut = 500002 },
+			[3] = { text = "住人たちの悩み～ロックリッジ～(3) 完了", shortcut = 500003 }
+		},
+		reward = { title = 2001, item = 31141 },
+		score = 1
+	},
+	[500005] = {
+		UI_Type = 1,
+		group = "BATTLE",
+		major = 3,
+		minor = 0,
+		title = "牛賊団退治～初級～(1)",
+		content = { summary = "キワワ砂漠にいる牛賊団を討伐", details = "「ラウンドライダー」「サイドライダー」「ブレードライダー」を100体討伐する" },
+		resource = {
+			[1] = { text = "ラウンドライダー 討伐", count = 100 },
+			[2] = { text = "サイドライダー 討伐", count = 100 },
+			[3] = { text = "ブレードライダー 討伐", count = 100 }
+		},
+		reward = { title = 2002 },
+		score = 1
+	},
+	[500006] = {
+		UI_Type = 1,
+		group = "BATTLE",
+		major = 3,
+		minor = 0,
+		title = "牛賊団退治～初級～(2)",
+		content = { summary = "キワワ砂漠にいる牛賊団を討伐", details = "「ラウンドライダー」「サイドライダー」「ブレードライダー」を1,000体討伐する" },
+		resource = {
+			[1] = { text = "ラウンドライダー 討伐", count = 1000 },
+			[2] = { text = "サイドライダー 討伐", count = 1000 },
+			[3] = { text = "ブレードライダー 討伐", count = 1000 }
+		},
+		reward = { title = 2003 },
+		score = 1
+	},
+	[500007] = {
+		UI_Type = 1,
+		group = "BATTLE",
+		major = 3,
+		minor = 0,
+		title = "牛賊団退治～初級～(3)",
+		content = { summary = "キワワ砂漠にいる牛賊団を討伐", details = "「ラウンドライダー」「サイドライダー」「ブレードライダー」を10,000体討伐する" },
+		resource = {
+			[1] = { text = "ラウンドライダー 討伐", count = 10000 },
+			[2] = { text = "サイドライダー 討伐", count = 10000 },
+			[3] = { text = "ブレードライダー 討伐", count = 10000 }
+		},
+		reward = { title = 2004 },
+		score = 1
+	},
+	[500008] = {
+		UI_Type = 1,
+		group = "BATTLE",
+		major = 3,
+		minor = 0,
+		title = "牛賊団退治～上級～(1)",
+		content = {
+			summary = "鉱山にいる牛賊団を討伐",
+			details = "「トップラウンドライダー」「トップサイドライダー」「トップブレードライダー」を100体討伐する"
+		},
+		resource = {
+			[1] = { text = "トップラウンドライダー 討伐", count = 100 },
+			[2] = { text = "トップサイドライダー 討伐", count = 100 },
+			[3] = { text = "トップブレードライダー 討伐", count = 100 }
+		},
+		reward = { title = 2005 },
+		score = 1
+	},
+	[500009] = {
+		UI_Type = 1,
+		group = "BATTLE",
+		major = 3,
+		minor = 0,
+		title = "牛賊団退治～上級～(2)",
+		content = {
+			summary = "鉱山にいる牛賊団を討伐",
+			details = "「トップラウンドライダー」「トップサイドライダー」「トップブレードライダー」を1,000体討伐する"
+		},
+		resource = {
+			[1] = { text = "トップラウンドライダー 討伐", count = 1000 },
+			[2] = { text = "トップサイドライダー 討伐", count = 1000 },
+			[3] = { text = "トップブレードライダー 討伐", count = 1000 }
+		},
+		reward = { title = 2006 },
+		score = 1
+	},
+	[500010] = {
+		UI_Type = 1,
+		group = "BATTLE",
+		major = 3,
+		minor = 0,
+		title = "牛賊団退治～上級～(3)",
+		content = {
+			summary = "鉱山にいる牛賊団を討伐",
+			details = "「トップラウンドライダー」「トップサイドライダー」「トップブレードライダー」を10,000体討伐する"
+		},
+		resource = {
+			[1] = { text = "トップラウンドライダー 討伐", count = 10000 },
+			[2] = { text = "トップサイドライダー 討伐", count = 10000 },
+			[3] = { text = "トップブレードライダー 討伐", count = 10000 }
+		},
+		reward = { title = 2007 },
+		score = 1
+	},
+	[500011] = {
+		UI_Type = 1,
+		group = "BATTLE",
+		major = 3,
+		minor = 0,
+		title = "地下街の治安維持(1)",
+		content = { summary = "ロックリッジ地下街のモンスターを討伐", details = "カニバラウスとプラズマラットを100体討伐する" },
+		resource = { [1] = { text = "カニバラウス 討伐", count = 100 }, [2] = { text = "プラズマラット 討伐", count = 100 } },
+		reward = { title = 2008 },
+		score = 1
+	},
+	[500012] = {
+		UI_Type = 1,
+		group = "BATTLE",
+		major = 3,
+		minor = 0,
+		title = "地下街の治安維持(2)",
+		content = { summary = "ロックリッジ地下街のモンスターを討伐", details = "カニバラウスとプラズマラットを1,000体討伐する" },
+		resource = { [1] = { text = "カニバラウス 討伐", count = 1000 }, [2] = { text = "プラズマラット 討伐", count = 1000 } },
+		reward = { title = 2009 },
+		score = 1
+	},
+	[500013] = {
+		UI_Type = 1,
+		group = "BATTLE",
+		major = 3,
+		minor = 0,
+		title = "地下街の治安維持(3)",
+		content = { summary = "ロックリッジ地下街のモンスターを討伐", details = "カニバラウスとプラズマラットを10,000体討伐する" },
+		resource = { [1] = { text = "カニバラウス 討伐", count = 10000 }, [2] = { text = "プラズマラット 討伐", count = 10000 } },
+		reward = { title = 2010 },
+		score = 1
+	},
+	[500014] = {
+		UI_Type = 0,
+		group = "ADVENTURE",
+		major = 2,
+		minor = 0,
+		title = "ロックリッジマスター",
+		content = {
+			summary = "ロックリッジのすべての課題をクリアする",
+			details = "「開拓地の何でも屋」「牛賊団退治～初級～(3)」「牛賊団退治～上級～(3)」「地下街の治安維持(3)」をクリアする"
+		},
+		resource = {
+			[1] = { text = "開拓地の何でも屋 完了", shortcut = 500004 },
+			[2] = { text = "牛賊団退治～初級～(3) 完了", shortcut = 500007 },
+			[3] = { text = "牛賊団退治～上級～(3) 完了", shortcut = 500010 },
+			[4] = { text = "地下街の治安維持(3) 完了", shortcut = 500013 }
+		},
+		reward = { title = 2011 },
+		score = 1
+	},
+	[500015] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 1,
+		minor = 0,
+		title = "パワスポ",
+		content = { summary = "？？？？？？？？？？", details = "？？？？？" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2012 },
+		score = 1
+	},
+	[500016] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 1,
+		minor = 0,
+		title = "天秤座の煌めき",
+		content = { summary = "リーブラの欠片を多結晶化", details = "NPC「クラピウス」に、リーブラの欠片を 200個渡し多結晶化する" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2013 },
+		score = 1
+	},
+	[500017] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 1,
+		minor = 0,
+		title = "蠍座の煌めき",
+		content = { summary = "スコーピオの欠片を多結晶化", details = "NPC「クラピウス」に、スコーピオの欠片を 200個渡し多結晶化する" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2014 },
+		score = 1
+	},
+	[500020] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 1,
+		minor = 0,
+		title = "牡羊座の煌めき",
+		content = { summary = "アリエスの欠片を多結晶化", details = "NPC「クラピウス」に、アリエスの欠片を 200個渡し多結晶化する" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2017 },
+		score = 1
+	},
+	[500021] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 1,
+		minor = 0,
+		title = "山羊座の煌めき",
+		content = { summary = "カプリコーンの欠片を多結晶化", details = "NPC「クラピウス」に、カプリコーンの欠片を 200個渡し多結晶化する" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2018 },
+		score = 1
+	},
+	[500022] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 1,
+		minor = 0,
+		title = "魚座の煌めき",
+		content = { summary = "パイシーズの欠片を多結晶化", details = "NPC「クラピウス」に、パイシーズの欠片を 200個渡し多結晶化する" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2019 },
+		score = 1
+	},
+	[500023] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 1,
+		minor = 0,
+		title = "サモンビギナー",
+		content = { summary = "古木の枝を使用する", details = "古木の枝を1個使用する" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2020 },
+		score = 1
+	},
+	[500024] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 1,
+		minor = 0,
+		title = "サモンマスター",
+		content = { summary = "古木の枝を使用する", details = "古木の枝を100個使用する" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2021 },
+		score = 1
+	},
+	[500025] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 1,
+		minor = 0,
+		title = "乙女座の煌めき",
+		content = { summary = "ヴァルゴの欠片を多結晶化", details = "NPC「クラピウス」に、ヴァルゴの欠片を 200個渡し多結晶化する" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2022 },
+		score = 1
+	},
+	[500026] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 1,
+		minor = 0,
+		title = "獅子座の煌めき",
+		content = { summary = "レオの欠片を多結晶化", details = "NPC「クラピウス」に、レオの欠片を 200個渡し多結晶化する" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2023 },
+		score = 1
+	},
+	[500027] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 1,
+		minor = 0,
+		title = "蟹座の煌めき",
+		content = { summary = "キャンサーの欠片を多結晶化", details = "NPC「クラピウス」に、キャンサーの欠片を 200個渡し多結晶化する" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2024 },
+		score = 1
+	},
+	[500028] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 1,
+		minor = 0,
+		title = "牡牛座の煌めき",
+		content = { summary = "タウロスの欠片を多結晶化", details = "NPC「クラピウス」に、タウロスの欠片を 200個渡し多結晶化する" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2025 },
+		score = 1
+	},
+	[500029] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 1,
+		minor = 0,
+		title = "双子座の煌めき",
+		content = { summary = "ジェミニの欠片を多結晶化", details = "NPC「クラピウス」に、ジェミニの欠片を 200個渡し多結晶化する" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2026 },
+		score = 1
+	},
+	[500030] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 1,
+		minor = 0,
+		title = "射手座の煌めき",
+		content = { summary = "サジタリウスの欠片を多結晶化", details = "NPC「クラピウス」に、サジタリウスの欠片を 200個渡し多結晶化する" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2027 },
+		score = 1
+	},
+	[500031] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 1,
+		minor = 0,
+		title = "蛇遣座の煌めき",
+		content = { summary = "サーペンタリウスの欠片を多結晶化", details = "NPC「クラピウス」に、サーペンタリウスの欠片を 200個渡し多結晶化する" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2028 },
+		score = 1
+	},
+	[500032] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 1,
+		minor = 0,
+		title = "水瓶座の煌めき",
+		content = { summary = "アクエリアスの欠片を多結晶化", details = "NPC「クラピウス」に、アクエリアスの欠片を 200個渡し多結晶化する" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2029 },
+		score = 1
+	},
+	[500033] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 1,
+		minor = 0,
+		title = "激情の星座たち",
+		content = { summary = "星座の称号を4種得る", details = "アリエス、キャンサー、リーブラ、カプリコーンの 称号を獲得する" },
+		resource = {
+			[1] = { text = "牡羊座の煌めき 完了", shortcut = 500020 },
+			[2] = { text = "蟹座の煌めき 完了", shortcut = 500027 },
+			[3] = { text = "天秤座の煌めき 完了", shortcut = 500016 },
+			[4] = { text = "山羊座の煌めき 完了", shortcut = 500021 }
+		},
+		reward = { title = 2030 },
+		score = 1
+	},
+	[500034] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 1,
+		minor = 0,
+		title = "堅牢たる星座たち",
+		content = { summary = "星座の称号を4種得る", details = "タウロス、レオ、スコーピオ、アクエリアスの 称号を獲得する" },
+		resource = {
+			[1] = { text = "牡牛座の煌めき 完了", shortcut = 500028 },
+			[2] = { text = "獅子座の煌めき 完了", shortcut = 500026 },
+			[3] = { text = "蠍座の煌めき 完了", shortcut = 500017 },
+			[4] = { text = "水瓶座の煌めき 完了", shortcut = 500032 }
+		},
+		reward = { title = 2031 },
+		score = 1
+	},
+	[500035] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 1,
+		minor = 0,
+		title = "うつろいし星座たち",
+		content = { summary = "星座の称号を4種得る", details = "ジェミニ、ヴァルゴ、サジタリウス、パイシーズの 称号を獲得する" },
+		resource = {
+			[1] = { text = "双子座の煌めき 完了", shortcut = 500029 },
+			[2] = { text = "乙女座の煌めき 完了", shortcut = 500025 },
+			[3] = { text = "射手座の煌めき 完了", shortcut = 500030 },
+			[4] = { text = "魚座の煌めき 完了", shortcut = 500022 }
+		},
+		reward = { title = 2032 },
+		score = 1
+	},
+	[500036] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 1,
+		minor = 0,
+		title = "The Zodiac",
+		content = { summary = "星座の称号を13種得る", details = "13星座の称号をすべて獲得する" },
+		resource = {
+			[1] = { text = "激情の星座たち 完了", shortcut = 500033 },
+			[2] = { text = "堅牢たる星座たち 完了", shortcut = 500034 },
+			[3] = { text = "うつろいし星座たち 完了", shortcut = 500035 },
+			[4] = { text = "蛇遣座の煌めき 完了", shortcut = 500031 }
+		},
+		reward = { title = 2033 },
+		score = 1
+	},
+	[500037] = {
+		UI_Type = 0,
+		group = "EAT",
+		major = 1,
+		minor = 0,
+		title = "カボチャケーキを食べよう！",
+		content = { summary = "カボチャケーキをたくさん食べる", details = "カボチャケーキを100個使う" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2034 },
+		score = 1
+	},
+	[500038] = {
+		UI_Type = 0,
+		group = "EAT",
+		major = 1,
+		minor = 0,
+		title = "スティックキャンディおいちい!!",
+		content = { summary = "？？？？？？？？？？", details = "？？？？？" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2035 },
+		score = 1
+	},
+	[500039] = {
+		UI_Type = 0,
+		group = "TAMING",
+		major = 1,
+		minor = 0,
+		title = "仲良しベアドール",
+		content = { summary = "ベアドールと仲良くなる", details = "キューペット「ベアドール」と　　　　　　　　　　　きわめて親しい状態になる" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2036, item = 31826 },
+		score = 1
+	},
+	[500040] = {
+		UI_Type = 0,
+		group = "EAT",
+		major = 1,
+		minor = 0,
+		title = "手作りチョコを食べよう！",
+		content = { summary = "手作りチョコをたくさん食べる", details = "手作りチョコを2140個使う" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2037 },
+		score = 1
+	},
+	[500041] = {
+		UI_Type = 0,
+		group = "ADVENTURE",
+		major = 2,
+		minor = 1,
+		title = "期間限定イベント「深淵の回廊」",
+		content = {
+			summary = "「深淵の回廊」に参加する",
+			details = "イベント開催期間中にプロンテラの座標(111,83)にいるNPC「眼光の鋭い衛士」に話しかける。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2038 },
+		score = 1
+	},
+	[500042] = {
+		UI_Type = 0,
+		group = "ADVENTURE",
+		major = 4,
+		minor = 0,
+		title = "「深淵の回廊～シンソウの王～」",
+		content = { summary = "「深淵の回廊～シンソウの王～」 完了", details = "ストーリークエスト「深淵の回廊～シンソウの王～」を完了する。" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2039 },
+		score = 1
+	},
+	[500043] = {
+		UI_Type = 0,
+		group = "ADVENTURE",
+		major = 4,
+		minor = 0,
+		title = "「深淵の回廊～王城に棲まう龍～」",
+		content = { summary = "「深淵の回廊～王城に棲まう龍～」 完了", details = "ストーリークエスト「深淵の回廊～王城に棲まう龍～」を完了する。" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2040 },
+		score = 1
+	},
+	[500044] = {
+		UI_Type = 0,
+		group = "ADVENTURE",
+		major = 4,
+		minor = 0,
+		title = "「深淵の回廊～混血のプリンセス～」",
+		content = { summary = "「深淵の回廊～混血のプリンセス～」 完了", details = "ストーリークエスト「深淵の回廊～混血のプリンセス～」を完了する。" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2041 },
+		score = 1
+	},
+	[500045] = {
+		UI_Type = 0,
+		group = "ADVENTURE",
+		major = 5,
+		minor = 0,
+		title = "「深淵の王墓」",
+		content = { summary = "「深淵の王墓」をクリアする。", details = "メモリアルダンジョン「深淵の王墓」をクリアする。" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2044 },
+		score = 1
+	},
+	[500046] = {
+		UI_Type = 0,
+		group = "ADVENTURE",
+		major = 5,
+		minor = 0,
+		title = "「深淵の古城」",
+		content = { summary = "「深淵の古城」をクリアする。", details = "メモリアルダンジョン「深淵の古城」をクリアする。" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2045 },
+		score = 1
+	},
+	[500047] = {
+		UI_Type = 0,
+		group = "ADVENTURE",
+		major = 5,
+		minor = 0,
+		title = "「深淵の試練場」",
+		content = { summary = "「深淵の試練場」をクリアする。", details = "メモリアルダンジョン「深淵の試練場」をクリアする。" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2046 },
+		score = 1
+	},
+	[500048] = {
+		UI_Type = 0,
+		group = "ADVENTURE",
+		major = 5,
+		minor = 0,
+		title = "「深淵の闘技場」",
+		content = { summary = "「深淵の闘技場」をクリアする。", details = "メモリアルダンジョン「深淵の闘技場」をクリアする。" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2047 },
+		score = 1
+	},
+	[500049] = {
+		UI_Type = 1,
+		group = "BATTLE",
+		major = 3,
+		minor = 0,
+		title = "討伐「魔女ジラント(ティアマト攻城戦)」",
+		content = { summary = "「魔女ジラント(ティアマト攻城戦)」を討伐する。", details = "ティアマト攻城戦に出現する「魔女ジラント」を1回倒す。" },
+		resource = { [1] = { text = "「魔女ジラント」 討伐", count = 1 } },
+		reward = { title = 2042 },
+		score = 1
+	},
+	[500050] = {
+		UI_Type = 1,
+		group = "BATTLE",
+		major = 3,
+		minor = 0,
+		title = "討伐「古龍ジラント(ティアマト攻城戦)」",
+		content = { summary = "「古龍ジラント(ティアマト攻城戦)」を討伐する。", details = "ティアマト攻城戦に出現する「古龍ジラント」を1回倒す。" },
+		resource = { [1] = { text = "「古龍ジラント」 討伐", count = 1 } },
+		reward = { title = 2043 },
+		score = 1
+	},
+	[500051] = {
+		UI_Type = 1,
+		group = "BATTLE",
+		major = 3,
+		minor = 0,
+		title = "討伐「エルヴィラ」",
+		content = { summary = "「エルヴィラ」を倒す。", details = "「エルヴィラ」を5000回倒す。" },
+		resource = { [1] = { text = "「エルヴィラ」 討伐", count = 5000 } },
+		reward = { title = 2048 },
+		score = 1
+	},
+	[500052] = {
+		UI_Type = 1,
+		group = "BATTLE",
+		major = 3,
+		minor = 0,
+		title = "討伐「ソヒョン」",
+		content = { summary = "「ソヒョン」を倒す。", details = "「ソヒョン」を5000回倒す。" },
+		resource = { [1] = { text = "「ソヒョン」 討伐", count = 5000 } },
+		reward = { title = 2049 },
+		score = 1
+	},
+	[500053] = {
+		UI_Type = 1,
+		group = "BATTLE",
+		major = 3,
+		minor = 0,
+		title = "討伐「ルド」",
+		content = { summary = "「ルド」を倒す。", details = "「ルド」を5000回倒す。" },
+		resource = { [1] = { text = "「ルド」 討伐", count = 5000 } },
+		reward = { title = 2050 },
+		score = 1
+	},
+	[500054] = {
+		UI_Type = 1,
+		group = "BATTLE",
+		major = 3,
+		minor = 0,
+		title = "討伐「ローラ」",
+		content = { summary = "「ローラ」を倒す。", details = "「ローラ」を5000回倒す。" },
+		resource = { [1] = { text = "「ローラ」 討伐", count = 5000 } },
+		reward = { title = 2051 },
+		score = 1
+	},
+	[500055] = {
+		UI_Type = 1,
+		group = "BATTLE",
+		major = 3,
+		minor = 0,
+		title = "討伐「将軍デヒョン」",
+		content = { summary = "「将軍デヒョン」を倒す。", details = "「将軍デヒョン」を1回倒す。" },
+		resource = { [1] = { text = "「将軍デヒョン」 討伐", count = 1 } },
+		reward = { title = 2052 },
+		score = 1
+	},
+	[500056] = {
+		UI_Type = 1,
+		group = "BATTLE",
+		major = 3,
+		minor = 0,
+		title = "討伐「狂信者ヒュリエル」",
+		content = { summary = "「狂信者ヒュリエル」を倒す。", details = "「狂信者ヒュリエル」を1回倒す。" },
+		resource = { [1] = { text = "「狂信者ヒュリエル」 討伐", count = 1 } },
+		reward = { title = 2053 },
+		score = 1
+	},
+	[500057] = {
+		UI_Type = 1,
+		group = "BATTLE",
+		major = 3,
+		minor = 0,
+		title = "討伐「無慈悲なジオイア」",
+		content = { summary = "「無慈悲なジオイア」を倒す。", details = "「無慈悲なジオイア」を1回倒す。" },
+		resource = { [1] = { text = "「無慈悲なジオイア」 討伐", count = 1 } },
+		reward = { title = 2054 },
+		score = 1
+	},
+	[500058] = {
+		UI_Type = 1,
+		group = "BATTLE",
+		major = 3,
+		minor = 0,
+		title = "討伐「亡者の守護者カデス」",
+		content = { summary = "「亡者の守護者カデス」を倒す。", details = "「亡者の守護者カデス」を1回倒す。" },
+		resource = { [1] = { text = "「亡者の守護者カデス」 討伐", count = 1 } },
+		reward = { title = 2055 },
+		score = 1
+	},
+	[500059] = {
+		UI_Type = 1,
+		group = "BATTLE",
+		major = 3,
+		minor = 0,
+		title = "討伐「古王グローザ」",
+		content = { summary = "「古王グローザ」を倒す。", details = "「古王グローザ」を1回倒す。" },
+		resource = { [1] = { text = "「古王グローザ」 討伐", count = 1 } },
+		reward = { title = 2056 },
+		score = 1
+	},
+	[500060] = {
+		UI_Type = 1,
+		group = "BATTLE",
+		major = 3,
+		minor = 0,
+		title = "討伐「深層の古王グローザ」",
+		content = { summary = "「深層の古王グローザ」を倒す。", details = "「深層の古王グローザ」を1回倒す。" },
+		resource = { [1] = { text = "「深層の古王グローザ」 討伐", count = 1 } },
+		reward = { title = 2057 },
+		score = 1
+	},
+	[500061] = {
+		UI_Type = 1,
+		group = "BATTLE",
+		major = 3,
+		minor = 0,
+		title = "討伐「魔女ジラント」",
+		content = { summary = "「魔女ジラント」を倒す。", details = "「魔女ジラント」を1回倒す。" },
+		resource = { [1] = { text = "「魔女ジラント」 討伐", count = 1 } },
+		reward = { title = 2058 },
+		score = 1
+	},
+	[500062] = {
+		UI_Type = 1,
+		group = "BATTLE",
+		major = 3,
+		minor = 0,
+		title = "討伐「古龍ジラント」",
+		content = { summary = "「古龍ジラント」を倒す。", details = "「古龍ジラント」を1回倒す。" },
+		resource = { [1] = { text = "「古龍ジラント」 討伐", count = 1 } },
+		reward = { title = 2059 },
+		score = 1
+	},
+	[500063] = {
+		UI_Type = 1,
+		group = "BATTLE",
+		major = 3,
+		minor = 0,
+		title = "討伐「王女メア」",
+		content = { summary = "「王女メア」を倒す。", details = "「王女メア」を1回倒す。" },
+		resource = { [1] = { text = "「王女メア」 討伐", count = 1 } },
+		reward = { title = 2060 },
+		score = 1
+	},
+	[500064] = {
+		UI_Type = 1,
+		group = "BATTLE",
+		major = 3,
+		minor = 0,
+		title = "討伐「半龍王女メア」",
+		content = { summary = "「半龍王女メア」を倒す。", details = "「半龍王女メア」を1回倒す。" },
+		resource = { [1] = { text = "「半龍王女メア」 討伐", count = 1 } },
+		reward = { title = 2061 },
+		score = 1
+	},
+	[500065] = {
+		UI_Type = 0,
+		group = "ADVENTURE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「トレジャーハントに挑戦」",
+		content = {
+			summary = "トレジャーハントで宝を見つける",
+			details = "イベント開催期間中に、イベント会場にいる　　　　　NPC「トレジャーハンター」に、宝を発見したことを　 [3]回報告する。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2062 },
+		score = 1
+	},
+	[500066] = {
+		UI_Type = 0,
+		group = "ADVENTURE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「続・トレジャーハントに挑戦」",
+		content = {
+			summary = "トレジャーハントで宝を見つける",
+			details = "イベント開催期間中に、イベント会場にいる　　　　　NPC「トレジャーハンター」に、宝を発見したことを　 [15]回報告する。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2063 },
+		score = 1
+	},
+	[500067] = {
+		UI_Type = 0,
+		group = "ADVENTURE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「続々・トレジャーハントに挑戦」",
+		content = {
+			summary = "トレジャーハントで宝を見つける",
+			details = "イベント開催期間中に、イベント会場にいる　　　　　NPC「トレジャーハンター」に、宝を発見したことを　 [45]回報告する。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2064 },
+		score = 1
+	},
+	[500068] = {
+		UI_Type = 1,
+		group = "EAT",
+		major = 3,
+		minor = 0,
+		title = "にんにく入れますか？（1玉目）",
+		content = { summary = "「ミニガーリン」を、すりおろす", details = "「ミニガーリン」を100体討伐する" },
+		resource = { [1] = { text = "「ミニガーリン」討伐", count = 100 } },
+		reward = { title = 2065 },
+		score = 1
+	},
+	[500069] = {
+		UI_Type = 1,
+		group = "EAT",
+		major = 3,
+		minor = 0,
+		title = "にんにく入れますか？（2玉目）",
+		content = { summary = "「ミニガーリン」を、もっとすりおろす", details = "「ミニガーリン」を500体討伐する" },
+		resource = { [1] = { text = "「ミニガーリン」討伐", count = 500 } },
+		reward = { title = 2066 },
+		score = 1
+	},
+	[500070] = {
+		UI_Type = 1,
+		group = "EAT",
+		major = 3,
+		minor = 0,
+		title = "にんにく入れますか？（3玉目）",
+		content = { summary = "「ミニガーリン」を、とことんすりおろす", details = "「ミニガーリン」を1,000体討伐する" },
+		resource = { [1] = { text = "「ミニガーリン」討伐", count = 1000 } },
+		reward = { title = 2067 },
+		score = 1
+	},
+	[500071] = {
+		UI_Type = 1,
+		group = "EAT",
+		major = 3,
+		minor = 0,
+		title = "にんにく入れますか？（4玉目）",
+		content = { summary = "「ミニガーリン」を、ことごとくすりおろす", details = "「ミニガーリン」を10,000体討伐する" },
+		resource = { [1] = { text = "「ミニガーリン」討伐", count = 10000 } },
+		reward = { title = 2068 },
+		score = 1
+	},
+	[500072] = {
+		UI_Type = 0,
+		group = "EAT",
+		major = 1,
+		minor = 0,
+		title = "にんにく怖い！",
+		content = { summary = "くっ……「ミニガーリン」に負けた！", details = "「ミニガーリン」に1回倒される" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2069 },
+		score = 1
+	},
+	[500073] = {
+		UI_Type = 0,
+		group = "TAMING",
+		major = 1,
+		minor = 0,
+		title = "王への進化",
+		content = { summary = "「ニブルレオン」の進化達成", details = "「ニブルキャット」を「ニブルレオン」に進化させる" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2070 },
+		score = 1
+	},
+	[500074] = {
+		UI_Type = 0,
+		group = "TAMING",
+		major = 1,
+		minor = 0,
+		title = "捨てられちゃった……",
+		content = { summary = "「ベアドール」の進化達成", details = "「ベアドール」を進化させる" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2071 },
+		score = 1
+	},
+	[500075] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 2,
+		title = "王と共に歩む道",
+		content = { summary = "王位継承問題を解決に導く", details = "クエスト「突然の来訪者」をクリア" },
+		resource = { [1] = { text = "ルーンミッドガッツ王国の王位継承に関する様々な 問題を解決し、新しい王の戴冠式を見届ける" } },
+		reward = { title = 2072 },
+		score = 1
+	},
+	[500076] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ニーヒルのサイン会参加1回目」",
+		content = {
+			summary = "ニーヒルのサイン会に1回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2073 },
+		score = 1
+	},
+	[500077] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ニーヒルのサイン会参加2回目」",
+		content = {
+			summary = "ニーヒルのサイン会に2回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2074 },
+		score = 1
+	},
+	[500078] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ニーヒルのサイン会参加3回目」",
+		content = {
+			summary = "ニーヒルのサイン会に3回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2075 },
+		score = 1
+	},
+	[500079] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ニーヒルのサイン会参加4回目」",
+		content = {
+			summary = "ニーヒルのサイン会に4回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2076 },
+		score = 1
+	},
+	[500080] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ニーヒルのサイン会参加5回目」",
+		content = {
+			summary = "ニーヒルのサイン会に5回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2077 },
+		score = 1
+	},
+	[500081] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ニーヒルのサイン会参加6回目」",
+		content = {
+			summary = "ニーヒルのサイン会に6回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2078 },
+		score = 1
+	},
+	[500082] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ニーヒルのサイン会参加7回目」",
+		content = {
+			summary = "ニーヒルのサイン会に7回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2079 },
+		score = 1
+	},
+	[500083] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ニーヒルのサイン会参加8回目」",
+		content = {
+			summary = "ニーヒルのサイン会に8回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2080 },
+		score = 1
+	},
+	[500084] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ニーヒルのサイン会参加9回目」",
+		content = {
+			summary = "ニーヒルのサイン会に9回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2081 },
+		score = 1
+	},
+	[500085] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ニーヒルのサイン会参加10回目」",
+		content = {
+			summary = "ニーヒルのサイン会に10回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2082 },
+		score = 1
+	},
+	[500086] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「スピーカのサイン会参加1回目」",
+		content = {
+			summary = "スピーカのサイン会に1回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2083 },
+		score = 1
+	},
+	[500087] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「スピーカのサイン会参加2回目」",
+		content = {
+			summary = "スピーカのサイン会に2回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2084 },
+		score = 1
+	},
+	[500088] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「スピーカのサイン会参加3回目」",
+		content = {
+			summary = "スピーカのサイン会に3回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2085 },
+		score = 1
+	},
+	[500089] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「スピーカのサイン会参加4回目」",
+		content = {
+			summary = "スピーカのサイン会に4回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2086 },
+		score = 1
+	},
+	[500090] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「スピーカのサイン会参加5回目」",
+		content = {
+			summary = "スピーカのサイン会に5回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2087 },
+		score = 1
+	},
+	[500091] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「スピーカのサイン会参加6回目」",
+		content = {
+			summary = "スピーカのサイン会に6回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2088 },
+		score = 1
+	},
+	[500092] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「スピーカのサイン会参加7回目」",
+		content = {
+			summary = "スピーカのサイン会に7回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2089 },
+		score = 1
+	},
+	[500093] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「スピーカのサイン会参加8回目」",
+		content = {
+			summary = "スピーカのサイン会に8回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2090 },
+		score = 1
+	},
+	[500094] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「スピーカのサイン会参加9回目」",
+		content = {
+			summary = "スピーカのサイン会に9回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2091 },
+		score = 1
+	},
+	[500095] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「スピーカのサイン会参加10回目」",
+		content = {
+			summary = "スピーカのサイン会に10回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2092 },
+		score = 1
+	},
+	[500096] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「スキアのサイン会参加1回目」",
+		content = {
+			summary = "スキアのサイン会に1回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2093 },
+		score = 1
+	},
+	[500097] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「スキアのサイン会参加2回目」",
+		content = {
+			summary = "スキアのサイン会に2回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2094 },
+		score = 1
+	},
+	[500098] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「スキアのサイン会参加3回目」",
+		content = {
+			summary = "スキアのサイン会に3回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2095 },
+		score = 1
+	},
+	[500099] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「スキアのサイン会参加4回目」",
+		content = {
+			summary = "スキアのサイン会に4回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2096 },
+		score = 1
+	},
+	[500100] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「スキアのサイン会参加5回目」",
+		content = {
+			summary = "スキアのサイン会に5回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2097 },
+		score = 1
+	},
+	[500101] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「スキアのサイン会参加6回目」",
+		content = {
+			summary = "スキアのサイン会に6回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2098 },
+		score = 1
+	},
+	[500102] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「スキアのサイン会参加7回目」",
+		content = {
+			summary = "スキアのサイン会に7回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2099 },
+		score = 1
+	},
+	[500103] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「スキアのサイン会参加8回目」",
+		content = {
+			summary = "スキアのサイン会に8回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2100 },
+		score = 1
+	},
+	[500104] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「スキアのサイン会参加9回目」",
+		content = {
+			summary = "スキアのサイン会に9回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2101 },
+		score = 1
+	},
+	[500105] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「スキアのサイン会参加10回目」",
+		content = {
+			summary = "スキアのサイン会に10回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2102 },
+		score = 1
+	},
+	[500106] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群探索①」",
+		content = {
+			summary = "ゴールのフロアに到達する",
+			details = "「遺跡群探索」にてゴールのフロアに達した後、　　　「久遠のグラストヘイム」に居るNPC「記録官」に 話しかけて「称号の確認」を行う"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2103 },
+		score = 1
+	},
+	[500107] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群探索②」",
+		content = {
+			summary = "最大到達フロアが規定数以上",
+			details = "「遺跡群探索」にて最大到達フロアが200を超えた後、 「久遠のグラストヘイム」に居るNPC「記録官」に 話しかけて「称号の確認」を行う"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2104 },
+		score = 1
+	},
+	[500108] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群探索③」",
+		content = {
+			summary = "宝箱の開封数が規定数以上",
+			details = "「遺跡群探索」にて宝箱の開封回数が20個を超えた後、「久遠のグラストヘイム」に居るNPC「記録官」に 話しかけて「称号の確認」を行う ※Lv.1以外の遺跡群でも回数はカウントされます"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2105 },
+		score = 1
+	},
+	[500109] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群探索④」",
+		content = {
+			summary = "宝箱の開封失敗数が規定数以上",
+			details = "「遺跡群探索」にて宝箱の開封回数で　　　 失敗回数が5個を超えた後、 「久遠のグラストヘイム」に居るNPC「記録官」に 話しかけて「称号の確認」を行う ※Lv.1以外の遺跡群でも回数はカウントされます"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2106 },
+		score = 1
+	},
+	[500110] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群探索⑤」",
+		content = {
+			summary = "シュミッツヘルム仮面を規定数以上利用",
+			details = "「遺跡群探索」にて「シュミッツヘルム仮面」の　　　 利用回数が15回を超えた後、　　　　　　　　　　　 「久遠のグラストヘイム」に居るNPC「記録官」に 話しかけて「称号の確認」を行う ※Lv.1以外の遺跡群でも回数はカウントされます"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2107 },
+		score = 1
+	},
+	[500111] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群探索⑥」",
+		content = {
+			summary = "ハードラックと規定数以上遭遇",
+			details = "「遺跡群探索」にて「ハードラック」との遭遇回数が　 13回を超えた後、　　　　　　　　　　　　　　　　 「久遠のグラストヘイム」に居るNPC「記録官」に 話しかけて「称号の確認」を行う ※Lv.1以外の遺跡群でも回数はカウントされます"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2108 },
+		score = 1
+	},
+	[500112] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群探索(特別)」",
+		content = { summary = "ヒットクイーン宝箱を討伐する", details = "廃亡遺跡群に出現する「ヒットクイーン宝箱」を　　　 1体討伐する" },
+		resource = { [1] = { text = "「ヒットクイーン宝箱」討伐", count = 1 } },
+		reward = { title = 2109 },
+		score = 1
+	},
+	[500113] = {
+		UI_Type = 0,
+		group = "ADVENTURE",
+		major = 4,
+		minor = 0,
+		title = "「最も強き者」",
+		content = {
+			summary = "最も強き者を自分の力だけで倒す。",
+			details = "「深淵の回廊～混血のプリンセス～」を闘技場で挑戦するところまで進めた後、最も高い難易度で「虚ろわざる剣士」の助けを借りずに真の力を解放した最も強き者を倒し、総合評価1000点を達成する。その後、最も強き者に話を聞く。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2110, item = 31818 },
+		score = 1
+	},
+	[500114] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「メロンクッキング(メロン武器)」",
+		content = {
+			summary = "メロンクッキングでメロン武器を1種類作成する",
+			details = "メロンクッキングで作成したメロン武器を メロンフェスタ会場の座標(112,68)にいる NPC「メロン鑑定士」に見せる。 作成したメロン武器の種類が「1」種類到達で達成。 ※装備したままでは見せられないので注意"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2111 },
+		score = 1
+	},
+	[500115] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「メロンクッキング(衣装)」",
+		content = {
+			summary = "メロンクッキングで衣装を1種類作成する",
+			details = "メロンクッキングで作成した衣装を メロンフェスタ会場の座標(112,68)にいる NPC「メロン鑑定士」に見せる。 作成した衣装の種類が「1」種類到達で達成。 ※装備したままでは見せられないので注意 ※チャーム＜揚花火＞は対象には含まれない"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2112 },
+		score = 1
+	},
+	[500116] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「メロンクッキング(衣装)」",
+		content = {
+			summary = "メロンクッキングで衣装を2種類作成する",
+			details = "メロンクッキングで作成した衣装を メロンフェスタ会場の座標(112,68)にいる NPC「メロン鑑定士」に見せる。 作成した衣装の種類が「2」種類到達で達成。 ※装備したままでは見せられないので注意 ※チャーム＜揚花火＞は対象には含まれない"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2113 },
+		score = 1
+	},
+	[500117] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「メロンクッキング(衣装)」",
+		content = {
+			summary = "メロンクッキングで衣装を3種類作成する",
+			details = "メロンクッキングで作成した衣装を メロンフェスタ会場の座標(112,68)にいる NPC「メロン鑑定士」に見せる。 作成した衣装の種類が「3」種類到達で達成。 ※装備したままでは見せられないので注意 ※チャーム＜揚花火＞は対象には含まれない"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2114 },
+		score = 1
+	},
+	[500118] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「メロンクッキング(衣装)」",
+		content = {
+			summary = "メロンクッキングで衣装を5種類作成する",
+			details = "メロンクッキングで作成した衣装を メロンフェスタ会場の座標(112,68)にいる NPC「メロン鑑定士」に見せる。 作成した衣装の種類が「5」種類到達で達成。 ※装備したままでは見せられないので注意 ※チャーム＜揚花火＞は対象には含まれない"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2115 },
+		score = 1
+	},
+	[500119] = {
+		UI_Type = 1,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「メロンハンティング」",
+		content = { summary = "「ミニメロリン」と「堕メロリン」を討伐する", details = "「ミニメロリン」「堕メロリン」を それぞれ500体討伐する" },
+		resource = { [1] = { text = "「ミニメロリン」討伐", count = 500 }, [2] = { text = "「堕メロリン」討伐", count = 500 } },
+		reward = { title = 2116 },
+		score = 1
+	},
+	[500127] = {
+		UI_Type = 1,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「除夜の餅つき」",
+		content = { summary = "「ちびモチリン」を討伐する", details = "「ちびモチリン」を108体討伐する" },
+		resource = { [1] = { text = "「ちびモチリン」を討伐する", count = 108 } },
+		reward = { title = 2124 },
+		score = 1
+	},
+	[500128] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「アグネスのサイン会参加1回目」",
+		content = {
+			summary = "アグネスのサイン会に1回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2125 },
+		score = 1
+	},
+	[500129] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「アグネスのサイン会参加2回目」",
+		content = {
+			summary = "アグネスのサイン会に2回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2126 },
+		score = 1
+	},
+	[500130] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「アグネスのサイン会参加3回目」",
+		content = {
+			summary = "アグネスのサイン会に3回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2127 },
+		score = 1
+	},
+	[500131] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「アグネスのサイン会参加4回目」",
+		content = {
+			summary = "アグネスのサイン会に4回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2128 },
+		score = 1
+	},
+	[500132] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「アグネスのサイン会参加5回目」",
+		content = {
+			summary = "アグネスのサイン会に5回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2129 },
+		score = 1
+	},
+	[500133] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「アグネスのサイン会参加6回目」",
+		content = {
+			summary = "アグネスのサイン会に6回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2130 },
+		score = 1
+	},
+	[500134] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「アグネスのサイン会参加7回目」",
+		content = {
+			summary = "アグネスのサイン会に7回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2131 },
+		score = 1
+	},
+	[500135] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「アグネスのサイン会参加8回目」",
+		content = {
+			summary = "アグネスのサイン会に8回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2132 },
+		score = 1
+	},
+	[500136] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「アグネスのサイン会参加9回目」",
+		content = {
+			summary = "アグネスのサイン会に9回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2133 },
+		score = 1
+	},
+	[500137] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「アグネスのサイン会参加10回目」",
+		content = {
+			summary = "アグネスのサイン会に10回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2134 },
+		score = 1
+	},
+	[500138] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ポーのサイン会参加1回目」",
+		content = {
+			summary = "ポーのサイン会に1回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2135 },
+		score = 1
+	},
+	[500139] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ポーのサイン会参加2回目」",
+		content = {
+			summary = "ポーのサイン会に2回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2136 },
+		score = 1
+	},
+	[500140] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ポーのサイン会参加3回目」",
+		content = {
+			summary = "ポーのサイン会に3回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2137 },
+		score = 1
+	},
+	[500141] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ポーのサイン会参加4回目」",
+		content = {
+			summary = "ポーのサイン会に4回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2138 },
+		score = 1
+	},
+	[500142] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ポーのサイン会参加5回目」",
+		content = {
+			summary = "ポーのサイン会に5回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2139 },
+		score = 1
+	},
+	[500143] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ポーのサイン会参加6回目」",
+		content = {
+			summary = "ポーのサイン会に6回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2140 },
+		score = 1
+	},
+	[500144] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ポーのサイン会参加7回目」",
+		content = {
+			summary = "ポーのサイン会に7回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2141 },
+		score = 1
+	},
+	[500145] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ポーのサイン会参加8回目」",
+		content = {
+			summary = "ポーのサイン会に8回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2142 },
+		score = 1
+	},
+	[500146] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ポーのサイン会参加9回目」",
+		content = {
+			summary = "ポーのサイン会に9回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2143 },
+		score = 1
+	},
+	[500147] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ポーのサイン会参加10回目」",
+		content = {
+			summary = "ポーのサイン会に10回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2144 },
+		score = 1
+	},
+	[500148] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「アイザックのサイン会参加1回目」",
+		content = {
+			summary = "アイザックのサイン会に1回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2145 },
+		score = 1
+	},
+	[500149] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「アイザックのサイン会参加2回目」",
+		content = {
+			summary = "アイザックのサイン会に2回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2146 },
+		score = 1
+	},
+	[500150] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「アイザックのサイン会参加3回目」",
+		content = {
+			summary = "アイザックのサイン会に3回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2147 },
+		score = 1
+	},
+	[500151] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「アイザックのサイン会参加4回目」",
+		content = {
+			summary = "アイザックのサイン会に4回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2148 },
+		score = 1
+	},
+	[500152] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「アイザックのサイン会参加5回目」",
+		content = {
+			summary = "アイザックのサイン会に5回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2149 },
+		score = 1
+	},
+	[500153] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「アイザックのサイン会参加6回目」",
+		content = {
+			summary = "アイザックのサイン会に6回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2150 },
+		score = 1
+	},
+	[500154] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「アイザックのサイン会参加7回目」",
+		content = {
+			summary = "アイザックのサイン会に7回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2151 },
+		score = 1
+	},
+	[500155] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「アイザックのサイン会参加8回目」",
+		content = {
+			summary = "アイザックのサイン会に8回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2152 },
+		score = 1
+	},
+	[500156] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「アイザックのサイン会参加9回目」",
+		content = {
+			summary = "アイザックのサイン会に9回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2153 },
+		score = 1
+	},
+	[500157] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「アイザックのサイン会参加10回目」",
+		content = {
+			summary = "アイザックのサイン会に10回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2154 },
+		score = 1
+	},
+	[500158] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群Lv.2 ①」",
+		content = {
+			summary = "ゴールのフロアに到達する",
+			details = "「廃亡遺跡群Lv.2」にてゴールのフロアに達した後、 「久遠のグラストヘイム」に居るNPC「記録官」に 話しかけて「称号の確認」を行う"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2155 },
+		score = 1
+	},
+	[500159] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群Lv.2 ②」",
+		content = {
+			summary = "最大到達フロアが規定数以上",
+			details = "「廃亡遺跡群Lv.2」にて最大到達フロアが 「200」を超えた後、 「久遠のグラストヘイム」に居るNPC「記録官」に 話しかけて「称号の確認」を行う"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2156 },
+		score = 1
+	},
+	[500165] = {
+		UI_Type = 1,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群Lv.2(特別)」",
+		content = {
+			summary = "ヒットクイーン宝箱Lv.2を討伐する",
+			details = "「廃亡遺跡群Lv.2」に出現する　　　　 「ヒットクイーン宝箱Lv.2」を1体討伐する"
+		},
+		resource = { [1] = { text = "「ヒットクイーン宝箱Lv.2」討伐", count = 1 } },
+		reward = { title = 2162 },
+		score = 1
+	},
+	[500166] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「メロンクッキング(衣装)」",
+		content = {
+			summary = "メロンクッキングで衣装を7種類作成する",
+			details = "メロンクッキングで作成した衣装を メロンフェスタ会場の座標(119,56)にいる NPC「メロン鑑定士」に見せる。 作成した衣装の種類が「7」種類到達で達成。 ※装備したままでは見せられないので注意 ※チャーム＜揚花火＞は対象には含まれない"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2163 },
+		score = 1
+	},
+	[500167] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「メロンクッキング(衣装)」",
+		content = {
+			summary = "メロンクッキングで衣装を9種類作成する",
+			details = "メロンクッキングで作成した衣装を メロンフェスタ会場の座標(119,56)にいる NPC「メロン鑑定士」に見せる。 作成した衣装の種類が「9」種類到達で達成。 ※装備したままでは見せられないので注意 ※チャーム＜揚花火＞は対象には含まれない"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2164 },
+		score = 1
+	},
+	[500168] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「メロンクッキング(衣装)」",
+		content = {
+			summary = "メロンクッキングで衣装を11種類作成する",
+			details = "メロンクッキングで作成した衣装を メロンフェスタ会場の座標(119,56)にいる NPC「メロン鑑定士」に見せる。 作成した衣装の種類が「11」種類到達で達成。 ※装備したままでは見せられないので注意 ※チャーム＜揚花火＞は対象には含まれない"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2165 },
+		score = 1
+	},
+	[500169] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ランタン・ハントI」",
+		content = {
+			summary = "「ジャックランタン」を50個発見する",
+			details = "「ジャックランタン」を50個発見したら 「ハロウィンパーティー会場(hal_main)」の 座標(181,197)にいるNPC「ランタン・キング」に報告し 報酬を受け取る。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2166 },
+		score = 1
+	},
+	[500170] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ランタン・ハントII」",
+		content = {
+			summary = "「ジャックランタン」を250個発見する",
+			details = "「ジャックランタン」を250個発見したら 「ハロウィンパーティー会場(hal_main)」の 座標(181,197)にいるNPC「ランタン・キング」に報告し 報酬を受け取る。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2167 },
+		score = 1
+	},
+	[500171] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ランタン・ハントIII」",
+		content = {
+			summary = "「ジャックランタン」を400個発見する",
+			details = "「ジャックランタン」を400個発見したら 「ハロウィンパーティー会場(hal_main)」の 座標(181,197)にいるNPC「ランタン・キング」に報告し 報酬を受け取る。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2168 },
+		score = 1
+	},
+	[500172] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ランタン・ハントIV」",
+		content = {
+			summary = "「ジャックランタン」を500個発見する",
+			details = "「ジャックランタン」を500個発見したら 「ハロウィンパーティー会場(hal_main)」の 座標(181,197)にいるNPC「ランタン・キング」に報告し 報酬を受け取る。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2169 },
+		score = 1
+	},
+	[500173] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ランタン・ハントV」",
+		content = {
+			summary = "「ジャックランタン」を650個発見する",
+			details = "「ジャックランタン」を650個発見したら 「ハロウィンパーティー会場(hal_main)」の 座標(181,197)にいるNPC「ランタン・キング」に報告し 報酬を受け取る。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2170 },
+		score = 1
+	},
+	[500174] = {
+		UI_Type = 0,
+		group = "TAMING",
+		major = 1,
+		minor = 0,
+		title = "いにしえの不死者",
+		content = { summary = "「マミー」の進化達成", details = "「マミー」を進化させる" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2171 },
+		score = 1
+	},
+	[500175] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ランタン・ハントVI」",
+		content = {
+			summary = "「ジャックランタン」に「Treat」を100回仕掛ける",
+			details = "発見した「ジャックランタン」に 「Treat」を100回仕掛けたら 「ハロウィンパーティー会場(hal_main)」の 座標(181,197)にいるNPC「ランタン・キング」に報告し 報酬を受け取る。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2172 },
+		score = 1
+	},
+	[500176] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ランタン・ハントVII」",
+		content = {
+			summary = "「ジャックランタン」に「Trick」を100回仕掛ける",
+			details = "発見した「ジャックランタン」に 「Trick」を100回仕掛けたら 「ハロウィンパーティー会場(hal_main)」の 座標(181,197)にいるNPC「ランタン・キング」に報告し 報酬を受け取る。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2173 },
+		score = 1
+	},
+	[500177] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ホルグレン被害者の会」",
+		content = { summary = "？？？？？？？？？？", details = "？？？？？" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2174 },
+		score = 1
+	},
+	[500178] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「モロクバスターズ！」",
+		content = { summary = "？？？？？？？？？？", details = "？？？？？" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2175 },
+		score = 1
+	},
+	[500179] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「カニがせめてきたぞっ」",
+		content = { summary = "？？？？？？？？？？", details = "？？？？？" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2176 },
+		score = 1
+	},
+	[500180] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ポリンをさがせ！」",
+		content = { summary = "？？？？？？？？？？", details = "？？？？？" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2177 },
+		score = 1
+	},
+	[500181] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「キャサリンのサイン会参加1回目」",
+		content = {
+			summary = "キャサリンのサイン会に1回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2178 },
+		score = 1
+	},
+	[500182] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「キャサリンのサイン会参加2回目」",
+		content = {
+			summary = "キャサリンのサイン会に2回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2179 },
+		score = 1
+	},
+	[500183] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「キャサリンのサイン会参加3回目」",
+		content = {
+			summary = "キャサリンのサイン会に3回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2180 },
+		score = 1
+	},
+	[500184] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「キャサリンのサイン会参加4回目」",
+		content = {
+			summary = "キャサリンのサイン会に4回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2181 },
+		score = 1
+	},
+	[500185] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「キャサリンのサイン会参加5回目」",
+		content = {
+			summary = "キャサリンのサイン会に5回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2182 },
+		score = 1
+	},
+	[500186] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「キャサリンのサイン会参加6回目」",
+		content = {
+			summary = "キャサリンのサイン会に6回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2183 },
+		score = 1
+	},
+	[500187] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「キャサリンのサイン会参加7回目」",
+		content = {
+			summary = "キャサリンのサイン会に7回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2184 },
+		score = 1
+	},
+	[500188] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「キャサリンのサイン会参加8回目」",
+		content = {
+			summary = "キャサリンのサイン会に8回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2185 },
+		score = 1
+	},
+	[500189] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「キャサリンのサイン会参加9回目」",
+		content = {
+			summary = "キャサリンのサイン会に9回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2186 },
+		score = 1
+	},
+	[500190] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「キャサリンのサイン会参加10回目」",
+		content = {
+			summary = "キャサリンのサイン会に10回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2187 },
+		score = 1
+	},
+	[500191] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「フリードリヒのサイン会参加1回目」",
+		content = {
+			summary = "フリードリヒのサイン会に1回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2188 },
+		score = 1
+	},
+	[500192] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「フリードリヒのサイン会参加2回目」",
+		content = {
+			summary = "フリードリヒのサイン会に2回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2189 },
+		score = 1
+	},
+	[500193] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「フリードリヒのサイン会参加3回目」",
+		content = {
+			summary = "フリードリヒのサイン会に3回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2190 },
+		score = 1
+	},
+	[500194] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「フリードリヒのサイン会参加4回目」",
+		content = {
+			summary = "フリードリヒのサイン会に4回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2191 },
+		score = 1
+	},
+	[500195] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「フリードリヒのサイン会参加5回目」",
+		content = {
+			summary = "フリードリヒのサイン会に5回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2192 },
+		score = 1
+	},
+	[500196] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「フリードリヒのサイン会参加6回目」",
+		content = {
+			summary = "フリードリヒのサイン会に6回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2193 },
+		score = 1
+	},
+	[500197] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「フリードリヒのサイン会参加7回目」",
+		content = {
+			summary = "フリードリヒのサイン会に7回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2194 },
+		score = 1
+	},
+	[500198] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「フリードリヒのサイン会参加8回目」",
+		content = {
+			summary = "フリードリヒのサイン会に8回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2195 },
+		score = 1
+	},
+	[500199] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「フリードリヒのサイン会参加9回目」",
+		content = {
+			summary = "フリードリヒのサイン会に9回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2196 },
+		score = 1
+	},
+	[500200] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「フリードリヒのサイン会参加10回目」",
+		content = {
+			summary = "フリードリヒのサイン会に10回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2197 },
+		score = 1
+	},
+	[500201] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「クロネカーのサイン会参加1回目」",
+		content = {
+			summary = "クロネカーのサイン会に1回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2198 },
+		score = 1
+	},
+	[500202] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「クロネカーのサイン会参加2回目」",
+		content = {
+			summary = "クロネカーのサイン会に2回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2199 },
+		score = 1
+	},
+	[500203] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「クロネカーのサイン会参加3回目」",
+		content = {
+			summary = "クロネカーのサイン会に3回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2200 },
+		score = 1
+	},
+	[500204] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「クロネカーのサイン会参加4回目」",
+		content = {
+			summary = "クロネカーのサイン会に4回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2201 },
+		score = 1
+	},
+	[500205] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「クロネカーのサイン会参加5回目」",
+		content = {
+			summary = "クロネカーのサイン会に5回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2202 },
+		score = 1
+	},
+	[500206] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「クロネカーのサイン会参加6回目」",
+		content = {
+			summary = "クロネカーのサイン会に6回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2203 },
+		score = 1
+	},
+	[500207] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「クロネカーのサイン会参加7回目」",
+		content = {
+			summary = "クロネカーのサイン会に7回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2204 },
+		score = 1
+	},
+	[500208] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「クロネカーのサイン会参加8回目」",
+		content = {
+			summary = "クロネカーのサイン会に8回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2205 },
+		score = 1
+	},
+	[500209] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「クロネカーのサイン会参加9回目」",
+		content = {
+			summary = "クロネカーのサイン会に9回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2206 },
+		score = 1
+	},
+	[500210] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「クロネカーのサイン会参加10回目」",
+		content = {
+			summary = "クロネカーのサイン会に10回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる　　 NPC「サイン会受付係」に話しかけて　　　　　　　　 サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2207 },
+		score = 1
+	},
+	[500211] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ロイヤル・スウィーツ　1」",
+		content = {
+			summary = "「双子姉妹のわがままイチゴケーキ」作成",
+			details = "「ロイヤル・ティーパーティー(val_tea1)」の　　　　座標(288,342)にいるNPC「ショコラ=バシニオ」にて　 「双子姉妹のわがままイチゴケーキ」を　　　　　　　「15」個作ったら　　　　　　　　　　　　　　　　　「＜実績＞作ったお菓子の確認」を選択し　　　　　　実績を解除する。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2208 },
+		score = 1
+	},
+	[500212] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ロイヤル・スウィーツ　2」",
+		content = {
+			summary = "「ニーヒル御用達フルーツパフェ・極」作成",
+			details = "「ロイヤル・ティーパーティー(val_tea1)」の　　　　座標(288,342)にいるNPC「ショコラ=バシニオ」にて　 「ニーヒル御用達フルーツパフェ・極」を　　　　　　「15」個作ったら　　　　　　　　　　　　　　　　　「＜実績＞作ったお菓子の確認」を選択し　　　　　　実績を解除する。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2209 },
+		score = 1
+	},
+	[500213] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ロイヤル・スウィーツ　3」",
+		content = {
+			summary = "「ポー秘蔵のやみつき絶品一口ケーキ」作成",
+			details = "「ロイヤル・ティーパーティー(val_tea1)」の　　　　座標(288,342)にいるNPC「ショコラ=バシニオ」にて　 「ポー秘蔵のやみつき絶品一口ケーキ」を　　　　　　「15」個作ったら　　　　　　　　　　　　　　　　　「＜実績＞作ったお菓子の確認」を選択し　　　　　　実績を解除する。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2210 },
+		score = 1
+	},
+	[500214] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ロイヤル・スウィーツ　4」",
+		content = {
+			summary = "「王妃が愛した魅惑の極上カップケーキ」作成",
+			details = "「ロイヤル・ティーパーティー(val_tea1)」の　　　　座標(288,342)にいるNPC「ショコラ=バシニオ」にて　 「王妃が愛した魅惑の極上カップケーキ」を　　　　　「15」個作ったら　　　　　　　　　　　　　　　　　「＜実績＞作ったお菓子の確認」を選択し　　　　　　実績を解除する。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2211 },
+		score = 1
+	},
+	[500215] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ロイヤル・スウィーツ　5」",
+		content = {
+			summary = "「フリードリヒ監修・しぼりたてモンブラン」作成",
+			details = "「ロイヤル・ティーパーティー(val_tea1)」の　　　　座標(288,342)にいるNPC「ショコラ=バシニオ」にて　 「フリードリヒ監修・しぼりたてモンブラン」を　　　「15」個作ったら　　　　　　　　　　　　　　　　　「＜実績＞作ったお菓子の確認」を選択し　　　　　　実績を解除する。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2212 },
+		score = 1
+	},
+	[500216] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群Lv.3 ①」",
+		content = {
+			summary = "ゴールのフロアに到達する",
+			details = "「廃亡遺跡群Lv.3」にてゴールのフロアに達した後、 「久遠のグラストヘイム」に居るNPC「記録官」に 話しかけて「称号の確認」を行う"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2213 },
+		score = 1
+	},
+	[500217] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群Lv.3 ②」",
+		content = {
+			summary = "最大到達フロアが規定数以上",
+			details = "「廃亡遺跡群Lv.3」にて最大到達フロアが 「200」を超えた後、 「久遠のグラストヘイム」に居るNPC「記録官」に 話しかけて「称号の確認」を行う"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2214 },
+		score = 1
+	},
+	[500218] = {
+		UI_Type = 1,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群Lv.3(特別)」",
+		content = {
+			summary = "ヒットクイーン宝箱Lv.3を討伐する",
+			details = "「廃亡遺跡群Lv.3」に出現する　　　　 「ヒットクイーン宝箱Lv.3」を1体討伐する"
+		},
+		resource = { [1] = { text = "「ヒットクイーン宝箱Lv.3」討伐", count = 1 } },
+		reward = { title = 2215 },
+		score = 1
+	},
+	[500219] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群 従者RK」",
+		content = { summary = "従者の転職", details = "「廃亡遺跡群」にて従者が 該当する職に転職した際に課題が達成される。" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2216 },
+		score = 1
+	},
+	[500220] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群 従者RG」",
+		content = { summary = "従者の転職", details = "「廃亡遺跡群」にて従者が 該当する職に転職した際に課題が達成される。" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2217 },
+		score = 1
+	},
+	[500221] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群 従者MN」",
+		content = { summary = "従者の転職", details = "「廃亡遺跡群」にて従者が 該当する職に転職した際に課題が達成される。" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2218 },
+		score = 1
+	},
+	[500222] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群 従者GN」",
+		content = { summary = "従者の転職", details = "「廃亡遺跡群」にて従者が 該当する職に転職した際に課題が達成される。" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2219 },
+		score = 1
+	},
+	[500223] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群 従者WL」",
+		content = { summary = "従者の転職", details = "「廃亡遺跡群」にて従者が 該当する職に転職した際に課題が達成される。" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2220 },
+		score = 1
+	},
+	[500224] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群 従者SO」",
+		content = { summary = "従者の転職", details = "「廃亡遺跡群」にて従者が 該当する職に転職した際に課題が達成される。" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2221 },
+		score = 1
+	},
+	[500225] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群 従者RA」",
+		content = { summary = "従者の転職", details = "「廃亡遺跡群」にて従者が 該当する職に転職した際に課題が達成される。" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2222 },
+		score = 1
+	},
+	[500226] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群 従者MI」",
+		content = { summary = "従者の転職", details = "「廃亡遺跡群」にて従者が 該当する職に転職した際に課題が達成される。" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2223 },
+		score = 1
+	},
+	[500227] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群 従者WA」",
+		content = { summary = "従者の転職", details = "「廃亡遺跡群」にて従者が 該当する職に転職した際に課題が達成される。" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2224 },
+		score = 1
+	},
+	[500228] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群 従者GC」",
+		content = { summary = "従者の転職", details = "「廃亡遺跡群」にて従者が 該当する職に転職した際に課題が達成される。" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2225 },
+		score = 1
+	},
+	[500229] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群 従者SC」",
+		content = { summary = "従者の転職", details = "「廃亡遺跡群」にて従者が 該当する職に転職した際に課題が達成される。" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2226 },
+		score = 1
+	},
+	[500230] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群 従者AB」",
+		content = { summary = "従者の転職", details = "「廃亡遺跡群」にて従者が 該当する職に転職した際に課題が達成される。" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2227 },
+		score = 1
+	},
+	[500231] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群 従者SR」",
+		content = { summary = "従者の転職", details = "「廃亡遺跡群」にて従者が 該当する職に転職した際に課題が達成される。" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2228 },
+		score = 1
+	},
+	[500232] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群 従者SE」",
+		content = { summary = "従者の転職", details = "「廃亡遺跡群」にて従者が 該当する職に転職した際に課題が達成される。" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2229 },
+		score = 1
+	},
+	[500233] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群 従者SP」",
+		content = { summary = "従者の転職", details = "「廃亡遺跡群」にて従者が 該当する職に転職した際に課題が達成される。" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2230 },
+		score = 1
+	},
+	[500234] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群 従者KA」",
+		content = { summary = "従者の転職", details = "「廃亡遺跡群」にて従者が 該当する職に転職した際に課題が達成される。" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2231 },
+		score = 1
+	},
+	[500235] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群 従者OB」",
+		content = { summary = "従者の転職", details = "「廃亡遺跡群」にて従者が 該当する職に転職した際に課題が達成される。" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2232 },
+		score = 1
+	},
+	[500236] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群 従者RL」",
+		content = { summary = "従者の転職", details = "「廃亡遺跡群」にて従者が 該当する職に転職した際に課題が達成される。" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2233 },
+		score = 1
+	},
+	[500237] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群 従者SN」",
+		content = { summary = "従者の転職", details = "「廃亡遺跡群」にて従者が 該当する職に転職した際に課題が達成される。" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2234 },
+		score = 1
+	},
+	[500238] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群 従者DO」",
+		content = { summary = "従者の転職", details = "「廃亡遺跡群」にて従者が 該当する職に転職した際に課題が達成される。" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2235 },
+		score = 1
+	},
+	[500160] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群Lv.2 ③」",
+		content = {
+			summary = "ツールを規定回数購入する",
+			details = "「廃亡遺跡群Lv.2」にてツールを「15」回購入した後、 「久遠のグラストヘイム」に居るNPC「記録官」に 話しかけて「称号の確認」を行う ※Lv.2以外の遺跡群でも回数はカウントされます"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2157 },
+		score = 1
+	},
+	[500161] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群Lv.2 ④」",
+		content = {
+			summary = "スロットを規定回数回す",
+			details = "「廃亡遺跡群Lv.2」にてスロットを「10」回回した後、 「久遠のグラストヘイム」に居るNPC「記録官」に 話しかけて「称号の確認」を行う ※Lv.2以外の遺跡群でも回数はカウントされます"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2158 },
+		score = 1
+	},
+	[500162] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群Lv.2 ⑤」",
+		content = {
+			summary = "「穢れ」を規定回数引き受ける",
+			details = "「廃亡遺跡群Lv.2」にて「穢れ」を 「10」回引き受けた後、 「久遠のグラストヘイム」に居るNPC「記録官」に 話しかけて「称号の確認」を行う ※Lv.2以外の遺跡群でも回数はカウントされます"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2159 },
+		score = 1
+	},
+	[500163] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群Lv.2 ⑥」",
+		content = {
+			summary = "「落とし穴」に規定回数落ちる",
+			details = "「廃亡遺跡群Lv.2」にて「落とし穴」に 「5」回落ちた後、 「久遠のグラストヘイム」に居るNPC「記録官」に 話しかけて「称号の確認」を行う ※Lv.2以外の遺跡群でも回数はカウントされます"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2160 },
+		score = 1
+	},
+	[500164] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群Lv.2 ⑦」",
+		content = {
+			summary = "「監獄」を規定回数クリア",
+			details = "「廃亡遺跡群Lv.2」にて「監獄」を「3」回突破した後、 「久遠のグラストヘイム」に居るNPC「記録官」に 話しかけて「称号の確認」を行う ※Lv.2以外の遺跡群でも回数はカウントされます"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2161 },
+		score = 1
+	},
+	[500239] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 3,
+		title = "ティアマト攻城戦YE「Normal」",
+		content = {
+			summary = "ティアマト攻城戦YEの指定難易度を完全クリア",
+			details = "ティアマト攻城戦YEの「Normal」で1000点取得した後、Yggdrasill用倉庫の座標(183,92)または、悠久の王国の首都プロンテラの座標(125,83)にいる NPC「時空の旅人」に話しかけて「称号の確認」を行う"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2236 },
+		score = 1
+	},
+	[500240] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 3,
+		title = "ティアマト攻城戦YE「Inferno」",
+		content = {
+			summary = "ティアマト攻城戦YEの指定難易度を完全クリア",
+			details = "ティアマト攻城戦YEの「Inferno」で1000点取得した後、Yggdrasill用倉庫の座標(183,92)または、悠久の王国の首都プロンテラの座標(125,83)にいる NPC「時空の旅人」に話しかけて「称号の確認」を行う"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2237 },
+		score = 1
+	},
+	[500241] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 3,
+		title = "ティアマト攻城戦YE「Extra」",
+		content = {
+			summary = "ティアマト攻城戦YEの指定難易度を完全クリア",
+			details = "ティアマト攻城戦YEの「Extra」で1000点取得した後、Yggdrasill用倉庫の座標(183,92)または、悠久の王国の首都プロンテラの座標(125,83)にいる NPC「時空の旅人」に話しかけて「称号の確認」を行う"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2238 },
+		score = 1
+	},
+	[500242] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 3,
+		title = "ティアマト攻城戦YE「Ultimate」",
+		content = {
+			summary = "ティアマト攻城戦YEの指定難易度を完全クリア",
+			details = "ティアマト攻城戦YEの「Ultimate」で1000点取得した後、Yggdrasill用倉庫の座標(183,92)または、悠久の王国の首都プロンテラの座標(125,83)にいる NPC「時空の旅人」に話しかけて「称号の確認」を行う"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2239 },
+		score = 1
+	},
+	[500243] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 3,
+		title = "ティアマト攻城戦YE「All Clear」",
+		content = {
+			summary = "ティアマト攻城戦YEの指定難易度を完全クリア",
+			details = "ティアマト攻城戦YEの「全難易度」で1000点取得した後、Yggdrasill用倉庫の座標(183,92)または、悠久の王国の首都プロンテラの座標(125,83)にいる NPC「時空の旅人」に話しかけて「称号の確認」を行う"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2240 },
+		score = 1
+	},
+	[500244] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「メロンクッキング(衣装)」",
+		content = {
+			summary = "メロンクッキングで衣装を13種類作成する",
+			details = "メロンクッキングで作成した衣装を メロンフェスタ会場の座標(119,56)にいる NPC「メロン鑑定士」に見せる。 作成した衣装の種類が「13」種類到達で達成。 ※装備したままでは見せられないので注意 ※チャーム＜揚花火＞は対象には含まれない"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2241 },
+		score = 1
+	},
+	[500245] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「メロンクッキング(衣装)」",
+		content = {
+			summary = "メロンクッキングで衣装を15種類作成する",
+			details = "メロンクッキングで作成した衣装を メロンフェスタ会場の座標(119,56)にいる NPC「メロン鑑定士」に見せる。 作成した衣装の種類が「15」種類到達で達成。 ※装備したままでは見せられないので注意 ※チャーム＜揚花火＞は対象には含まれない"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2242 },
+		score = 1
+	},
+	[500246] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 3,
+		title = "蜃気楼の塔YE「Normal」",
+		content = {
+			summary = "蜃気楼の塔YEの指定難易度を完全クリア",
+			details = "蜃気楼の塔YEの「Normal」を登頂した後、Yggdrasill用倉庫の座標(183,92)または、悠久の王国の首都プロンテラの座標(125,83)にいる NPC「時空の旅人」に話しかけて「称号の確認」を行う"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2243 },
+		score = 1
+	},
+	[500247] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 3,
+		title = "蜃気楼の塔YE「Inferno」",
+		content = {
+			summary = "蜃気楼の塔YEの指定難易度を完全クリア",
+			details = "蜃気楼の塔YEの「Inferno」を登頂した後、Yggdrasill用倉庫の座標(183,92)または、悠久の王国の首都プロンテラの座標(125,83)にいる NPC「時空の旅人」に話しかけて「称号の確認」を行う"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2244 },
+		score = 1
+	},
+	[500248] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 3,
+		title = "蜃気楼の塔YE「Extra」",
+		content = {
+			summary = "蜃気楼の塔YEの指定難易度を完全クリア",
+			details = "蜃気楼の塔YEの「Extra」を登頂した後、Yggdrasill用倉庫の座標(183,92)または、悠久の王国の首都プロンテラの座標(125,83)にいる NPC「時空の旅人」に話しかけて「称号の確認」を行う"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2245 },
+		score = 1
+	},
+	[500249] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 3,
+		title = "蜃気楼の塔YE「Ultimate」",
+		content = {
+			summary = "蜃気楼の塔YEの指定難易度を完全クリア",
+			details = "蜃気楼の塔YEの「Ultimate」を登頂した後、Yggdrasill用倉庫の座標(183,92)または、悠久の王国の首都プロンテラの座標(125,83)にいる NPC「時空の旅人」に話しかけて「称号の確認」を行う"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2246 },
+		score = 1
+	},
+	[500250] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 3,
+		title = "蜃気楼の塔YE「All Clear」",
+		content = {
+			summary = "蜃気楼の塔YEの指定難易度を完全クリア",
+			details = "蜃気楼の塔YEの「全難易度」を登頂した後、Yggdrasill用倉庫の座標(183,92)または、悠久の王国の首都プロンテラの座標(125,83)にいる NPC「時空の旅人」に話しかけて「称号の確認」を行う"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2247 },
+		score = 1
+	},
+	[500251] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ミニスパイダリン捕獲作戦I」",
+		content = {
+			summary = "ミニスパイダリンの討伐を1回達成する",
+			details = "「ミニスパイダリン捕獲作戦」にて ミニスパイダリン討伐を「1」回達成後、 「ハロウィンパーティー会場(hal_main)」の 座標(202,191)にいるNPC「アラクニャ」に話しかけ 「称号の確認」を行う。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2248 },
+		score = 1
+	},
+	[500252] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ミニスパイダリン捕獲作戦II」",
+		content = {
+			summary = "ミニスパイダリンの討伐を6回達成する",
+			details = "「ミニスパイダリン捕獲作戦」にて ミニスパイダリン討伐を「6」回達成後、 「ハロウィンパーティー会場(hal_main)」の 座標(202,191)にいるNPC「アラクニャ」に話しかけ 「称号の確認」を行う。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2249 },
+		score = 1
+	},
+	[500253] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ミニスパイダリン捕獲作戦III」",
+		content = {
+			summary = "ミニスパイダリンの討伐を12回達成する",
+			details = "「ミニスパイダリン捕獲作戦」にて ミニスパイダリン討伐を「12」回達成後、 「ハロウィンパーティー会場(hal_main)」の 座標(202,191)にいるNPC「アラクニャ」に話しかけ 「称号の確認」を行う。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2250 },
+		score = 1
+	},
+	[500254] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「人生はギャンブル！」",
+		content = { summary = "？？？？？？？？？？", details = "？？？？？" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2251 },
+		score = 1
+	},
+	[500255] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「毎日の食事」",
+		content = { summary = "？？？？？？？？？？", details = "？？？？？" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2252 },
+		score = 1
+	},
+	[500256] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「レイジーのおもてなし 1」",
+		content = {
+			summary = "ニーヒルからの評価を得る",
+			details = "「ロイヤル・ティーパーティー(val_tea1)」の 座標(256,328)にいるNPC「レイジー」にて お客の「ニーヒル」にお菓子を渡し 「★」20個分の評価を得る。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2253 },
+		score = 1
+	},
+	[500257] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「レイジーのおもてなし 2」",
+		content = {
+			summary = "スピーカからの評価を得る",
+			details = "「ロイヤル・ティーパーティー(val_tea1)」の 座標(256,328)にいるNPC「レイジー」にて お客の「スピーカ」にお菓子を渡し 「★」20個分の評価を得る。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2254 },
+		score = 1
+	},
+	[500258] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「レイジーのおもてなし 3」",
+		content = {
+			summary = "スキアからの評価を得る",
+			details = "「ロイヤル・ティーパーティー(val_tea1)」の 座標(256,328)にいるNPC「レイジー」にて お客の「スキア」にお菓子を渡し 「★」20個分の評価を得る。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2255 },
+		score = 1
+	},
+	[500259] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「レイジーのおもてなし 4」",
+		content = {
+			summary = "アグネスからの評価を得る",
+			details = "「ロイヤル・ティーパーティー(val_tea1)」の 座標(256,328)にいるNPC「レイジー」にて お客の「アグネス」にお菓子を渡し 「★」20個分の評価を得る。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2256 },
+		score = 1
+	},
+	[500260] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「レイジーのおもてなし 5」",
+		content = {
+			summary = "ポーからの評価を得る",
+			details = "「ロイヤル・ティーパーティー(val_tea1)」の 座標(256,328)にいるNPC「レイジー」にて お客の「ポー」にお菓子を渡し 「★」20個分の評価を得る。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2257 },
+		score = 1
+	},
+	[500261] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「レイジーのおもてなし 6」",
+		content = {
+			summary = "アイザックからの評価を得る",
+			details = "「ロイヤル・ティーパーティー(val_tea1)」の 座標(256,328)にいるNPC「レイジー」にて お客の「アイザック」にお菓子を渡し 「★」20個分の評価を得る。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2258 },
+		score = 1
+	},
+	[500262] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「レイジーのおもてなし 7」",
+		content = {
+			summary = "キャサリンからの評価を得る",
+			details = "「ロイヤル・ティーパーティー(val_tea1)」の 座標(256,328)にいるNPC「レイジー」にて お客の「キャサリン」にお菓子を渡し 「★」20個分の評価を得る。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2259 },
+		score = 1
+	},
+	[500263] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「レイジーのおもてなし 8」",
+		content = {
+			summary = "フリードリヒからの評価を得る",
+			details = "「ロイヤル・ティーパーティー(val_tea1)」の 座標(256,328)にいるNPC「レイジー」にて お客の「フリードリヒ」にお菓子を渡し 「★」20個分の評価を得る。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2260 },
+		score = 1
+	},
+	[500264] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「レイジーのおもてなし 9」",
+		content = {
+			summary = "クロネカーからの評価を得る",
+			details = "「ロイヤル・ティーパーティー(val_tea1)」の 座標(256,328)にいるNPC「レイジー」にて お客の「クロネカー」にお菓子を渡し 「★」20個分の評価を得る。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2261 },
+		score = 1
+	},
+	[500265] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「レイジーのおもてなし 10」",
+		content = {
+			summary = "レイジーからの評価を得る",
+			details = "「ロイヤル・ティーパーティー(val_tea1)」の 座標(256,328)にいるNPC「レイジー」にて お客の「レイジー」にお菓子を渡し 「★」20個分の評価を得る。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2262 },
+		score = 1
+	},
+	[500266] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「レイジーのおもてなし 11」",
+		content = {
+			summary = "エレナからの評価を得る",
+			details = "「ロイヤル・ティーパーティー(val_tea1)」の 座標(256,328)にいるNPC「レイジー」にて お客の「エレナ」にお菓子を渡し 「★」20個分の評価を得る。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2263 },
+		score = 1
+	},
+	[500267] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「レイジーのおもてなし 12」",
+		content = {
+			summary = "エストからの評価を得る",
+			details = "「ロイヤル・ティーパーティー(val_tea1)」の 座標(256,328)にいるNPC「レイジー」にて お客の「エスト」にお菓子を渡し 「★」20個分の評価を得る。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2264 },
+		score = 1
+	},
+	[500268] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ロイヤル・スウィーツ　6」",
+		content = {
+			summary = "「アグネスが夢見たローズケーキ」作成",
+			details = "「ロイヤル・ティーパーティー(val_tea1)」の 座標(288,342)にいるNPC「ショコラ=バシニオ」にて 「アグネスが夢見たローズケーキ」を 「15」個作ったら 「＜実績＞作ったお菓子の確認」を選択し 実績を解除する。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2265 },
+		score = 1
+	},
+	[500269] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ロイヤル・スウィーツ　7」",
+		content = {
+			summary = "「アイザックが仕掛けるミルククレープ」作成",
+			details = "「ロイヤル・ティーパーティー(val_tea1)」の 座標(288,342)にいるNPC「ショコラ=バシニオ」にて 「アイザックが仕掛けるミルククレープ」を 「15」個作ったら 「＜実績＞作ったお菓子の確認」を選択し 実績を解除する。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2266 },
+		score = 1
+	},
+	[500270] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ロイヤル・スウィーツ　8」",
+		content = {
+			summary = "「クロネカーお墨付き団子(老舗の味)」作成",
+			details = "「ロイヤル・ティーパーティー(val_tea1)」の 座標(288,342)にいるNPC「ショコラ=バシニオ」にて 「クロネカーお墨付き団子(老舗の味)」を 「15」個作ったら 「＜実績＞作ったお菓子の確認」を選択し 実績を解除する。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2267 },
+		score = 1
+	},
+	[500271] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ロイヤル・スウィーツ　9」",
+		content = {
+			summary = "「レイジーの心を奪った教皇クッキー」作成",
+			details = "「ロイヤル・ティーパーティー(val_tea1)」の 座標(288,342)にいるNPC「ショコラ=バシニオ」にて 「レイジーの心を奪った教皇クッキー」を 「15」個作ったら 「＜実績＞作ったお菓子の確認」を選択し 実績を解除する。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2268 },
+		score = 1
+	},
+	[500272] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ロイヤル・スウィーツ　10」",
+		content = {
+			summary = "「エレナ爆推しの芳烈ポップコーン」作成",
+			details = "「ロイヤル・ティーパーティー(val_tea1)」の 座標(288,342)にいるNPC「ショコラ=バシニオ」にて 「エレナ爆推しの芳烈ポップコーン」を 「15」個作ったら 「＜実績＞作ったお菓子の確認」を選択し 実績を解除する。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2269 },
+		score = 1
+	},
+	[500273] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ロイヤル・スウィーツ　11」",
+		content = {
+			summary = "「エストが愛飲する炭酸ベリージュース」作成",
+			details = "「ロイヤル・ティーパーティー(val_tea1)」の 座標(288,342)にいるNPC「ショコラ=バシニオ」にて 「エストが愛飲する炭酸ベリージュース」を 「15」個作ったら 「＜実績＞作ったお菓子の確認」を選択し 実績を解除する。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2270 },
+		score = 1
+	},
+	[500274] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「レイジーのサイン会参加1回目」",
+		content = {
+			summary = "レイジーのサイン会に1回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2271 },
+		score = 1
+	},
+	[500275] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「レイジーのサイン会参加2回目」",
+		content = {
+			summary = "レイジーのサイン会に2回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2272 },
+		score = 1
+	},
+	[500276] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「レイジーのサイン会参加3回目」",
+		content = {
+			summary = "レイジーのサイン会に3回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2273 },
+		score = 1
+	},
+	[500277] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「レイジーのサイン会参加4回目」",
+		content = {
+			summary = "レイジーのサイン会に4回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2274 },
+		score = 1
+	},
+	[500278] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「レイジーのサイン会参加5回目」",
+		content = {
+			summary = "レイジーのサイン会に5回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2275 },
+		score = 1
+	},
+	[500279] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「レイジーのサイン会参加6回目」",
+		content = {
+			summary = "レイジーのサイン会に6回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2276 },
+		score = 1
+	},
+	[500280] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「レイジーのサイン会参加7回目」",
+		content = {
+			summary = "レイジーのサイン会に7回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2277 },
+		score = 1
+	},
+	[500281] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「レイジーのサイン会参加8回目」",
+		content = {
+			summary = "レイジーのサイン会に8回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2278 },
+		score = 1
+	},
+	[500282] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「レイジーのサイン会参加9回目」",
+		content = {
+			summary = "レイジーのサイン会に9回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2279 },
+		score = 1
+	},
+	[500283] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「レイジーのサイン会参加10回目」",
+		content = {
+			summary = "レイジーのサイン会に10回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2280 },
+		score = 1
+	},
+	[500284] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「エレナのサイン会参加1回目」",
+		content = {
+			summary = "エレナのサイン会に1回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2281 },
+		score = 1
+	},
+	[500285] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「エレナのサイン会参加2回目」",
+		content = {
+			summary = "エレナのサイン会に2回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2282 },
+		score = 1
+	},
+	[500286] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「エレナのサイン会参加3回目」",
+		content = {
+			summary = "エレナのサイン会に3回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2283 },
+		score = 1
+	},
+	[500287] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「エレナのサイン会参加4回目」",
+		content = {
+			summary = "エレナのサイン会に4回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2284 },
+		score = 1
+	},
+	[500288] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「エレナのサイン会参加5回目」",
+		content = {
+			summary = "エレナのサイン会に5回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2285 },
+		score = 1
+	},
+	[500289] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「エレナのサイン会参加6回目」",
+		content = {
+			summary = "エレナのサイン会に6回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2286 },
+		score = 1
+	},
+	[500290] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「エレナのサイン会参加7回目」",
+		content = {
+			summary = "エレナのサイン会に7回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2287 },
+		score = 1
+	},
+	[500291] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「エレナのサイン会参加8回目」",
+		content = {
+			summary = "エレナのサイン会に8回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2288 },
+		score = 1
+	},
+	[500292] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「エレナのサイン会参加9回目」",
+		content = {
+			summary = "エレナのサイン会に9回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2289 },
+		score = 1
+	},
+	[500293] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「エレナのサイン会参加10回目」",
+		content = {
+			summary = "エレナのサイン会に10回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2290 },
+		score = 1
+	},
+	[500294] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「エストのサイン会参加1回目」",
+		content = {
+			summary = "エストのサイン会に1回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2291 },
+		score = 1
+	},
+	[500295] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「エストのサイン会参加2回目」",
+		content = {
+			summary = "エストのサイン会に2回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2292 },
+		score = 1
+	},
+	[500296] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「エストのサイン会参加3回目」",
+		content = {
+			summary = "エストのサイン会に3回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2293 },
+		score = 1
+	},
+	[500297] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「エストのサイン会参加4回目」",
+		content = {
+			summary = "エストのサイン会に4回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2294 },
+		score = 1
+	},
+	[500298] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「エストのサイン会参加5回目」",
+		content = {
+			summary = "エストのサイン会に5回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2295 },
+		score = 1
+	},
+	[500299] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「エストのサイン会参加6回目」",
+		content = {
+			summary = "エストのサイン会に6回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2296 },
+		score = 1
+	},
+	[500300] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「エストのサイン会参加7回目」",
+		content = {
+			summary = "エストのサイン会に7回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2297 },
+		score = 1
+	},
+	[500301] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「エストのサイン会参加8回目」",
+		content = {
+			summary = "エストのサイン会に8回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2298 },
+		score = 1
+	},
+	[500302] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「エストのサイン会参加9回目」",
+		content = {
+			summary = "エストのサイン会に9回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2299 },
+		score = 1
+	},
+	[500303] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「エストのサイン会参加10回目」",
+		content = {
+			summary = "エストのサイン会に10回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2300 },
+		score = 1
+	},
+	[500304] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群Lv.4 ①」",
+		content = {
+			summary = "ゴールのフロアに到達する",
+			details = "「廃亡遺跡群Lv.4」にてゴールのフロアに達した後、 「久遠のグラストヘイム」に居るNPC「記録官」に 話しかけて「称号の確認」を行う"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2301 },
+		score = 1
+	},
+	[500305] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群Lv.4 ②」",
+		content = {
+			summary = "最大到達フロアが規定数以上",
+			details = "「廃亡遺跡群Lv.4」にて最大到達フロアが 「200」を超えた後、 「久遠のグラストヘイム」に居るNPC「記録官」に 話しかけて「称号の確認」を行う"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2302 },
+		score = 1
+	},
+	[500306] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群Lv.4 ③」",
+		content = {
+			summary = "キャンプ飯を作って食べる",
+			details = "「廃亡遺跡群」のキャンプ時に キャンプ飯を「2」回作って食べた後、 「久遠のグラストヘイム」に居るNPC「記録官」に 話しかけて「称号の確認」を行う"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2303 },
+		score = 1
+	},
+	[500307] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群Lv.4 ④」",
+		content = {
+			summary = "キャンプ飯を作って食べる",
+			details = "「廃亡遺跡群」のキャンプ時に キャンプ飯を「10」回作って食べた後、 「久遠のグラストヘイム」に居るNPC「記録官」に 話しかけて「称号の確認」を行う"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2304 },
+		score = 1
+	},
+	[500308] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群Lv.4 ⑤」",
+		content = {
+			summary = "キャンプ飯を作って食べる",
+			details = "「廃亡遺跡群」のキャンプ時に キャンプ飯を「20」回作って食べた後、 「久遠のグラストヘイム」に居るNPC「記録官」に 話しかけて「称号の確認」を行う"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2305 },
+		score = 1
+	},
+	[500309] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群Lv.4 ⑥」",
+		content = {
+			summary = "従者にツールをプレゼントする",
+			details = "「廃亡遺跡群」のキャンプ時に 従者にツールを「10」回プレゼントした後、 「久遠のグラストヘイム」に居るNPC「記録官」に 話しかけて「称号の確認」を行う"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2306 },
+		score = 1
+	},
+	[500310] = {
+		UI_Type = 1,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群Lv.4(特別)」",
+		content = {
+			summary = "ヒットクイーン宝箱Lv.4を討伐する",
+			details = "「廃亡遺跡群Lv.4」に出現する　　　　 「ヒットクイーン宝箱Lv.4」を1体討伐する"
+		},
+		resource = { [1] = { text = "「ヒットクイーン宝箱Lv.4」討伐", count = 1 } },
+		reward = { title = 2307 },
+		score = 1
+	},
+	[500311] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群 従者DK」",
+		content = { summary = "従者の転職", details = "「廃亡遺跡群」にて従者が 該当する職に転職した際に課題が達成される。" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2308 },
+		score = 1
+	},
+	[500312] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群 従者IG」",
+		content = { summary = "従者の転職", details = "「廃亡遺跡群」にて従者が 該当する職に転職した際に課題が達成される。" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2309 },
+		score = 1
+	},
+	[500313] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群 従者MT」",
+		content = { summary = "従者の転職", details = "「廃亡遺跡群」にて従者が 該当する職に転職した際に課題が達成される。" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2310 },
+		score = 1
+	},
+	[500314] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群 従者BO」",
+		content = { summary = "従者の転職", details = "「廃亡遺跡群」にて従者が 該当する職に転職した際に課題が達成される。" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2311 },
+		score = 1
+	},
+	[500315] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群 従者AM」",
+		content = { summary = "従者の転職", details = "「廃亡遺跡群」にて従者が 該当する職に転職した際に課題が達成される。" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2312 },
+		score = 1
+	},
+	[500316] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群 従者EM」",
+		content = { summary = "従者の転職", details = "「廃亡遺跡群」にて従者が 該当する職に転職した際に課題が達成される。" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2313 },
+		score = 1
+	},
+	[500317] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群 従者WH」",
+		content = { summary = "従者の転職", details = "「廃亡遺跡群」にて従者が 該当する職に転職した際に課題が達成される。" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2314 },
+		score = 1
+	},
+	[500318] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群 従者TB」",
+		content = { summary = "従者の転職", details = "「廃亡遺跡群」にて従者が 該当する職に転職した際に課題が達成される。" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2315 },
+		score = 1
+	},
+	[500319] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群 従者TV」",
+		content = { summary = "従者の転職", details = "「廃亡遺跡群」にて従者が 該当する職に転職した際に課題が達成される。" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2316 },
+		score = 1
+	},
+	[500320] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群 従者SX」",
+		content = { summary = "従者の転職", details = "「廃亡遺跡群」にて従者が 該当する職に転職した際に課題が達成される。" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2317 },
+		score = 1
+	},
+	[500321] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群 従者AC」",
+		content = { summary = "従者の転職", details = "「廃亡遺跡群」にて従者が 該当する職に転職した際に課題が達成される。" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2318 },
+		score = 1
+	},
+	[500322] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群 従者CD」",
+		content = { summary = "従者の転職", details = "「廃亡遺跡群」にて従者が 該当する職に転職した際に課題が達成される。" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2319 },
+		score = 1
+	},
+	[500323] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群 従者IQ」",
+		content = { summary = "従者の転職", details = "「廃亡遺跡群」にて従者が 該当する職に転職した際に課題が達成される。" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2320 },
+		score = 1
+	},
+	[500324] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群 従者TT」",
+		content = { summary = "従者の転職", details = "「廃亡遺跡群」にて従者が 該当する職に転職した際に課題が達成される。" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2321 },
+		score = 1
+	},
+	[500325] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群 従者SA」",
+		content = { summary = "従者の転職", details = "「廃亡遺跡群」にて従者が 該当する職に転職した際に課題が達成される。" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2322 },
+		score = 1
+	},
+	[500326] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群 従者SK」",
+		content = { summary = "従者の転職", details = "「廃亡遺跡群」にて従者が 該当する職に転職した際に課題が達成される。" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2323 },
+		score = 1
+	},
+	[500327] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群 従者SI」",
+		content = { summary = "従者の転職", details = "「廃亡遺跡群」にて従者が 該当する職に転職した際に課題が達成される。" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2324 },
+		score = 1
+	},
+	[500328] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群 従者NW」",
+		content = { summary = "従者の転職", details = "「廃亡遺跡群」にて従者が 該当する職に転職した際に課題が達成される。" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2325 },
+		score = 1
+	},
+	[500329] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群 従者HN」",
+		content = { summary = "従者の転職", details = "「廃亡遺跡群」にて従者が 該当する職に転職した際に課題が達成される。" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2326 },
+		score = 1
+	},
+	[500330] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群 従者SH」",
+		content = { summary = "従者の転職", details = "「廃亡遺跡群」にて従者が 該当する職に転職した際に課題が達成される。" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2327 },
+		score = 1
+	},
+	[500331] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群 食材探求 ①」",
+		content = {
+			summary = "食材モンスターでキャンプ飯を作る",
+			details = "「廃亡遺跡群」のキャンプ時に キャンプ飯で「1」種類の食材モンスターを食べた後、 「久遠のグラストヘイム」に居るNPC「食材探求家」に 話しかけて「食材の報告」を行う"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2328 },
+		score = 1
+	},
+	[500332] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群 食材探求 ②」",
+		content = {
+			summary = "食材モンスターでキャンプ飯を作る",
+			details = "「廃亡遺跡群」のキャンプ時に キャンプ飯で「5」種類の食材モンスターを食べた後、 「久遠のグラストヘイム」に居るNPC「食材探求家」に 話しかけて「食材の報告」を行う"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2329 },
+		score = 1
+	},
+	[500333] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「メロンクッキング(衣装)」",
+		content = {
+			summary = "メロンクッキングで衣装を17種類作成する",
+			details = "メロンクッキングで作成した衣装を メロンフェスタ会場の座標(119,56)にいる NPC「メロン鑑定士」に見せる。 作成した衣装の種類が「17」種類到達で達成。 ※装備したままでは見せられないので注意 ※チャーム＜揚花火＞は対象には含まれない"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2330 },
+		score = 1
+	},
+	[500334] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「メロンクッキング(衣装)」",
+		content = {
+			summary = "メロンクッキングで衣装を19種類作成する",
+			details = "メロンクッキングで作成した衣装を メロンフェスタ会場の座標(119,56)にいる NPC「メロン鑑定士」に見せる。 作成した衣装の種類が「19」種類到達で達成。 ※装備したままでは見せられないので注意 ※チャーム＜揚花火＞は対象には含まれない"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2331 },
+		score = 1
+	},
+	[500335] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「激突!スウィーツコンテスト!!」",
+		content = {
+			summary = "「メア陣営」でストーリークエストをクリアする",
+			details = "イベントクエスト「激突!スウィーツコンテスト!!」を 「メア陣営」でクリア"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2332 },
+		score = 1
+	},
+	[500336] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「激突!スウィーツコンテスト!!」",
+		content = {
+			summary = "「ジラント陣営」でストーリークエストをクリアする",
+			details = "イベントクエスト「激突!スウィーツコンテスト!!」を 「ジラント陣営」でクリア"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2333 },
+		score = 1
+	},
+	[500337] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「グローザVSグローザ!?」",
+		content = { summary = "ストーリークエストをクリアする", details = "イベントクエスト「グローザVSグローザ!? 極限のWARS!!」をクリア" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2334 },
+		score = 1
+	},
+	[500338] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「魔術師ルキフルの精錬+9」",
+		content = { summary = "ルキフルの精錬で+9メロン武器を作る", details = "魔術師ルキフルの精錬にて 精錬値「+9」のメロン武器を作る" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2335 },
+		score = 1
+	},
+	[500339] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「魔術師ルキフルの精錬+10」",
+		content = { summary = "ルキフルの精錬で+10メロン武器を作る", details = "魔術師ルキフルの精錬にて 精錬値「+10」のメロン武器を作る" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2336 },
+		score = 1
+	},
+	[500340] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「トロピカルサマーチャレンジ」",
+		content = {
+			summary = "チャレンジで「教皇の夏休みカード」を当てる",
+			details = "イベント開催期間中にUrdrワールドの フレイヤ大神殿（セスルムニル）(座標173,151)にいる NPC「ﾄﾛﾋﾟｶﾙｻﾏｰﾁｬﾚﾝｼﾞ受付」にて抽選に挑戦し、 「教皇の夏休みカード」を当てる。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2337 },
+		score = 1
+	},
+	[500341] = {
+		UI_Type = 0,
+		group = "EAT",
+		major = 1,
+		minor = 0,
+		title = "カボチャケーキをもっと食べよう！",
+		content = { summary = "カボチャケーキをドカ食いする", details = "カボチャケーキを3000個使う" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2338 },
+		score = 1
+	},
+	[500346] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「テーマパークの秘密!?」",
+		content = { summary = "？？？？？？？？？？", details = "？？？？？" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2343 },
+		score = 1
+	},
+	[500342] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「年の初めの運試し(大吉)」",
+		content = {
+			summary = "おみくじ巫女さんのおみくじで「大吉」を引く",
+			details = "「泉水の国アマツ (amatsu)」の座標(47,129)にいる NPC「おみくじ巫女さん」にて、おみくじを行い 「大吉」を引く。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2339 },
+		score = 1
+	},
+	[500343] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「年の初めの運試し(大凶)」",
+		content = {
+			summary = "おみくじ巫女さんのおみくじで「大凶」を引く",
+			details = "「泉水の国アマツ (amatsu)」の座標(47,129)にいる NPC「おみくじ巫女さん」にて、おみくじを行い 「大凶」を引く。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2340 },
+		score = 1
+	},
+	[500344] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「おもち大好き」",
+		content = {
+			summary = "おもちの購入＆作成数の累計が500個達成",
+			details = "「泉水の国アマツ (amatsu)」の 座標(67,114)にいるNPC「ヴァレス」と 座標(67,109)にいるNPC「ミーナ」にて おもちの購入＆作成の累計数を500以上にする。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2341 },
+		score = 1
+	},
+	[500345] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「お年玉ちょうだい！」",
+		content = {
+			summary = "カプラの「お年玉交換サービス」を利用する",
+			details = "「光来山 (mt_sunrise)」の座標(114,150)にいる NPC「カプラカプレーゼ」にて お年玉交換サービスを行い、お年玉を得る。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2342 },
+		score = 1
+	},
+	[500347] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「レイジーのおもてなし 13」",
+		content = {
+			summary = "ディエンからの評価を得る",
+			details = "「ロイヤル・ティーパーティー(val_tea1)」の 座標(256,328)にいるNPC「レイジー」にて お客の「ディエン」にお菓子を渡し 「★」20個分の評価を得る。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2344 },
+		score = 1
+	},
+	[500348] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「レイジーのおもてなし 14」",
+		content = {
+			summary = "コトネスからの評価を得る",
+			details = "「ロイヤル・ティーパーティー(val_tea1)」の 座標(256,328)にいるNPC「レイジー」にて お客の「コトネス」にお菓子を渡し 「★」20個分の評価を得る。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2345 },
+		score = 1
+	},
+	[500349] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「レイジーのおもてなし 15」",
+		content = {
+			summary = "リードシーからの評価を得る",
+			details = "「ロイヤル・ティーパーティー(val_tea1)」の 座標(256,328)にいるNPC「レイジー」にて お客の「リードシー」にお菓子を渡し 「★」20個分の評価を得る。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2346 },
+		score = 1
+	},
+	[500350] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ロイヤル・スウィーツ　12」",
+		content = {
+			summary = "「ディエンが愛する黄金リンゴ焼き」作成",
+			details = "「ロイヤル・ティーパーティー(val_tea1)」の 座標(288,342)にいるNPC「ショコラ=バシニオ」にて 「ディエンが愛する黄金リンゴ焼き」を 「15」個作ったら 「＜実績＞作ったお菓子の確認」を選択し 実績を解除する。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2347 },
+		score = 1
+	},
+	[500351] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ロイヤル・スウィーツ　13」",
+		content = {
+			summary = "「コトネスが惚れ込む龍鱗大福」作成",
+			details = "「ロイヤル・ティーパーティー(val_tea1)」の 座標(288,342)にいるNPC「ショコラ=バシニオ」にて 「コトネスが惚れ込む龍鱗大福」を 「15」個作ったら 「＜実績＞作ったお菓子の確認」を選択し 実績を解除する。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2348 },
+		score = 1
+	},
+	[500352] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ロイヤル・スウィーツ　14」",
+		content = {
+			summary = "「リードシーを魅了した濃厚バタークッキー」作成",
+			details = "「ロイヤル・ティーパーティー(val_tea1)」の 座標(288,342)にいるNPC「ショコラ=バシニオ」にて 「リードシーを魅了した濃厚バタークッキー」を 「15」個作ったら 「＜実績＞作ったお菓子の確認」を選択し 実績を解除する。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2349 },
+		score = 1
+	},
+	[500353] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ディエンのサイン会参加1回目」",
+		content = {
+			summary = "ディエンのサイン会に1回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2350 },
+		score = 1
+	},
+	[500354] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ディエンのサイン会参加2回目」",
+		content = {
+			summary = "ディエンのサイン会に2回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2351 },
+		score = 1
+	},
+	[500355] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ディエンのサイン会参加3回目」",
+		content = {
+			summary = "ディエンのサイン会に3回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2352 },
+		score = 1
+	},
+	[500356] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ディエンのサイン会参加4回目」",
+		content = {
+			summary = "ディエンのサイン会に4回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2353 },
+		score = 1
+	},
+	[500357] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ディエンのサイン会参加5回目」",
+		content = {
+			summary = "ディエンのサイン会に5回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2354 },
+		score = 1
+	},
+	[500358] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ディエンのサイン会参加6回目」",
+		content = {
+			summary = "ディエンのサイン会に6回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2355 },
+		score = 1
+	},
+	[500359] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ディエンのサイン会参加7回目」",
+		content = {
+			summary = "ディエンのサイン会に7回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2356 },
+		score = 1
+	},
+	[500360] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ディエンのサイン会参加8回目」",
+		content = {
+			summary = "ディエンのサイン会に8回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2357 },
+		score = 1
+	},
+	[500361] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ディエンのサイン会参加9回目」",
+		content = {
+			summary = "ディエンのサイン会に9回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2358 },
+		score = 1
+	},
+	[500362] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ディエンのサイン会参加10回目」",
+		content = {
+			summary = "ディエンのサイン会に10回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2359 },
+		score = 1
+	},
+	[500363] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「コトネスのサイン会参加1回目」",
+		content = {
+			summary = "コトネスのサイン会に1回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2360 },
+		score = 1
+	},
+	[500364] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「コトネスのサイン会参加2回目」",
+		content = {
+			summary = "コトネスのサイン会に2回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2361 },
+		score = 1
+	},
+	[500365] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「コトネスのサイン会参加3回目」",
+		content = {
+			summary = "コトネスのサイン会に3回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2362 },
+		score = 1
+	},
+	[500366] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「コトネスのサイン会参加4回目」",
+		content = {
+			summary = "コトネスのサイン会に4回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2363 },
+		score = 1
+	},
+	[500367] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「コトネスのサイン会参加5回目」",
+		content = {
+			summary = "コトネスのサイン会に5回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2364 },
+		score = 1
+	},
+	[500368] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「コトネスのサイン会参加6回目」",
+		content = {
+			summary = "コトネスのサイン会に6回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2365 },
+		score = 1
+	},
+	[500369] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「コトネスのサイン会参加7回目」",
+		content = {
+			summary = "コトネスのサイン会に7回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2366 },
+		score = 1
+	},
+	[500370] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「コトネスのサイン会参加8回目」",
+		content = {
+			summary = "コトネスのサイン会に8回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2367 },
+		score = 1
+	},
+	[500371] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「コトネスのサイン会参加9回目」",
+		content = {
+			summary = "コトネスのサイン会に9回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2368 },
+		score = 1
+	},
+	[500372] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「コトネスのサイン会参加10回目」",
+		content = {
+			summary = "コトネスのサイン会に10回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2369 },
+		score = 1
+	},
+	[500373] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「リードシーのサイン会参加1回目」",
+		content = {
+			summary = "リードシーのサイン会に1回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2370 },
+		score = 1
+	},
+	[500374] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「リードシーのサイン会参加2回目」",
+		content = {
+			summary = "リードシーのサイン会に2回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2371 },
+		score = 1
+	},
+	[500375] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「リードシーのサイン会参加3回目」",
+		content = {
+			summary = "リードシーのサイン会に3回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2372 },
+		score = 1
+	},
+	[500376] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「リードシーのサイン会参加4回目」",
+		content = {
+			summary = "リードシーのサイン会に4回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2373 },
+		score = 1
+	},
+	[500377] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「リードシーのサイン会参加5回目」",
+		content = {
+			summary = "リードシーのサイン会に5回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2374 },
+		score = 1
+	},
+	[500378] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「リードシーのサイン会参加6回目」",
+		content = {
+			summary = "リードシーのサイン会に6回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2375 },
+		score = 1
+	},
+	[500379] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「リードシーのサイン会参加7回目」",
+		content = {
+			summary = "リードシーのサイン会に7回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2376 },
+		score = 1
+	},
+	[500380] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「リードシーのサイン会参加8回目」",
+		content = {
+			summary = "リードシーのサイン会に8回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2377 },
+		score = 1
+	},
+	[500381] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「リードシーのサイン会参加9回目」",
+		content = {
+			summary = "リードシーのサイン会に9回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2378 },
+		score = 1
+	},
+	[500382] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「リードシーのサイン会参加10回目」",
+		content = {
+			summary = "リードシーのサイン会に10回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2379 },
+		score = 1
+	},
+	[500383] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群Lv.5 ①」",
+		content = {
+			summary = "ゴールのフロアに到達する",
+			details = "「廃亡遺跡群Lv.5」にてゴールのフロアに達した後、 「久遠のグラストヘイム」に居るNPC「記録官」に 話しかけて「称号の確認」を行う"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2380 },
+		score = 1
+	},
+	[500384] = {
+		UI_Type = 1,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群Lv.5(特別)」",
+		content = {
+			summary = "ヒットクイーン宝箱Lv.5を討伐する",
+			details = "「廃亡遺跡群Lv.5」に出現する　　　　 「ヒットクイーン宝箱Lv.5」を1体討伐する"
+		},
+		resource = { [1] = { text = "「ヒットクイーン宝箱Lv.5」討伐", count = 1 } },
+		reward = { title = 2381 },
+		score = 1
+	},
+	[500385] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群　聖遺物獲得①」",
+		content = {
+			summary = "聖遺物「導きのアストロラーベ」獲得",
+			details = "「廃亡遺跡群Lv.5」にて 聖遺物「導きのアストロラーベ」獲得後、 「久遠のグラストヘイム」に居るNPC「記録官」に 話しかけて「称号の確認」を行う"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2382 },
+		score = 1
+	},
+	[500386] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群　聖遺物獲得②」",
+		content = {
+			summary = "聖遺物「魔剣ハラクダス」獲得",
+			details = "「廃亡遺跡群Lv.5」にて 聖遺物「魔剣ハラクダス」獲得後、 「久遠のグラストヘイム」に居るNPC「記録官」に 話しかけて「称号の確認」を行う"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2383 },
+		score = 1
+	},
+	[500387] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群　聖遺物獲得③」",
+		content = {
+			summary = "聖遺物「ヒョウハクの人形」獲得",
+			details = "「廃亡遺跡群Lv.5」にて 聖遺物「ヒョウハクの人形」獲得後、 「久遠のグラストヘイム」に居るNPC「記録官」に 話しかけて「称号の確認」を行う"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2384 },
+		score = 1
+	},
+	[500388] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群　聖遺物獲得④」",
+		content = {
+			summary = "聖遺物「解明のロゼッタ」獲得",
+			details = "「廃亡遺跡群Lv.5」にて 聖遺物「解明のロゼッタ」獲得後、 「久遠のグラストヘイム」に居るNPC「記録官」に 話しかけて「称号の確認」を行う"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2385 },
+		score = 1
+	},
+	[500389] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群　聖遺物獲得⑤」",
+		content = {
+			summary = "聖遺物「ラグ・デバイス」獲得",
+			details = "「廃亡遺跡群Lv.5」にて 聖遺物「ラグ・デバイス」獲得後、 「久遠のグラストヘイム」に居るNPC「記録官」に 話しかけて「称号の確認」を行う"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2386 },
+		score = 1
+	},
+	[500390] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群　聖遺物獲得⑥」",
+		content = {
+			summary = "聖遺物「アカシック・レーダー」獲得",
+			details = "「廃亡遺跡群Lv.5」にて 聖遺物「アカシック・レーダー」獲得後、 「久遠のグラストヘイム」に居るNPC「記録官」に 話しかけて「称号の確認」を行う"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2387 },
+		score = 1
+	},
+	[500391] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群　聖遺物獲得⑦」",
+		content = {
+			summary = "聖遺物「ホンキートンクピアノ」獲得",
+			details = "「廃亡遺跡群Lv.5」にて 聖遺物「ホンキートンクピアノ」獲得後、 「久遠のグラストヘイム」に居るNPC「記録官」に 話しかけて「称号の確認」を行う"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2388 },
+		score = 1
+	},
+	[500392] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群　聖遺物獲得⑧」",
+		content = {
+			summary = "聖遺物「冒涜的な貯金箱」獲得",
+			details = "「廃亡遺跡群Lv.5」にて 聖遺物「冒涜的な貯金箱」獲得後、 「久遠のグラストヘイム」に居るNPC「記録官」に 話しかけて「称号の確認」を行う"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2389 },
+		score = 1
+	},
+	[500393] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群 従者WK」",
+		content = { summary = "従者の転職", details = "「廃亡遺跡群」にて従者が 該当する職に転職した際に課題が達成される。" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2390 },
+		score = 1
+	},
+	[500394] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群 従者KB」",
+		content = { summary = "従者の転職", details = "「廃亡遺跡群」にて従者が 該当する職に転職した際に課題が達成される。" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2391 },
+		score = 1
+	},
+	[500395] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「遺跡群 食材探求 ③」",
+		content = {
+			summary = "食材モンスターでキャンプ飯を作る",
+			details = "「廃亡遺跡群」のキャンプ時に キャンプ飯で「8」種類の食材モンスターを食べた後、 「久遠のグラストヘイム」に居るNPC「食材探求家」に 話しかけて「食材の報告」を行う"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2392 },
+		score = 1
+	},
+	[500396] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「バキたんクエスト①」",
+		content = { summary = "「バキたんクエスト」のクエストを2個完了", details = "「バキたんクエスト」のクエストを2個完了させる。" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2393 },
+		score = 1
+	},
+	[500397] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「バキたんクエスト②」",
+		content = { summary = "「バキたんクエスト」のクエストを4個完了", details = "「バキたんクエスト」のクエストを4個完了させる。" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2394 },
+		score = 1
+	},
+	[500398] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「バキたんクエスト③」",
+		content = { summary = "「バキたんクエスト」のクエストを6個完了", details = "「バキたんクエスト」のクエストを6個完了させる。" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2395 },
+		score = 1
+	},
+	[500399] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「トロピカルサマーチャレンジ」",
+		content = {
+			summary = "チャレンジで「限界科学者の夏休みカード」を当てる",
+			details = "イベント開催期間中にUrdrワールドの フレイヤ大神殿（セスルムニル）(座標173,151)にいる NPC「ﾄﾛﾋﾟｶﾙｻﾏｰﾁｬﾚﾝｼﾞ受付」にて抽選に挑戦し、 「限界科学者の夏休みカード」を当てる。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2396 },
+		score = 1
+	},
+	[500400] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「トロピカルサマーチャレンジ」",
+		content = {
+			summary = "チャレンジで「偽神の夏休みカード」を当てる",
+			details = "イベント開催期間中にUrdrワールドの フレイヤ大神殿（セスルムニル）(座標173,151)にいる NPC「ﾄﾛﾋﾟｶﾙｻﾏｰﾁｬﾚﾝｼﾞ受付」にて抽選に挑戦し、 「偽神の夏休みカード」を当てる。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2397 },
+		score = 1
+	},
+	[500401] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「リベンジャーズ・ナイトI」",
+		content = { summary = "復讐を1回達成する", details = "「リベンジャーズ・ナイト」にて 討伐を「1」回達成する。" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2398 },
+		score = 1
+	},
+	[500402] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「リベンジャーズ・ナイトII」",
+		content = { summary = "復讐を4回達成する", details = "「リベンジャーズ・ナイト」にて 討伐を「4」回達成する。" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2399 },
+		score = 1
+	},
+	[500403] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「リベンジャーズ・ナイトIII」",
+		content = { summary = "復讐を12回達成する", details = "「リベンジャーズ・ナイト」にて 討伐を「12」回達成する。" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2400 },
+		score = 1
+	},
+	[500404] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「死立ブラック学園」",
+		content = { summary = "ストーリークエストをクリアする", details = "メモリアルストーリー2015「死立ブラック学園」を クリアする。" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2401 },
+		score = 1
+	},
+	[500405] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「死立ブラック学園」",
+		content = {
+			summary = "「謎の少女Ｘ」に決糖で勝利する",
+			details = "メモリアルストーリー2015「死立ブラック学園」にて 「謎の少女Ｘ」と決糖し、勝利する。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2402 },
+		score = 1
+	},
+	[500406] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「死立ブラック学園」",
+		content = { summary = "技能「神の目」を習得する", details = "メモリアルストーリー2015「死立ブラック学園」にて 技能「神の目」を習得する。" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2403 },
+		score = 1
+	},
+	[500407] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「死立ブラック学園」",
+		content = { summary = "技能「無残切」を習得する", details = "メモリアルストーリー2015「死立ブラック学園」にて 技能「無残切」を習得する。" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2404 },
+		score = 1
+	},
+	[500408] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「死立ブラック学園」",
+		content = {
+			summary = "技能「氷炎の魔術師」を習得する",
+			details = "メモリアルストーリー2015「死立ブラック学園」にて 技能「氷炎の魔術師」を習得する。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2405 },
+		score = 1
+	},
+	[500409] = {
+		UI_Type = 0,
+		group = "TAMING",
+		major = 1,
+		minor = 0,
+		title = "Once in a Blue Moon",
+		content = { summary = "「ロリルリ」の進化達成", details = "「ロリルリ」を進化させる" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2406 },
+		score = 1
+	},
+	[500410] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「死立ブラック学園」",
+		content = { summary = "特別補習を完了する", details = "メモリアルストーリー2015「死立ブラック学園」にて 落第後に特別補習を完了する。" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2407 },
+		score = 1
+	},
+	[500411] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「釣り場に迫る影？」",
+		content = { summary = "？？？？？？？？？？", details = "？？？？？" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2408 },
+		score = 1
+	},
+	[500412] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「謎解き探偵」",
+		content = {
+			summary = "「謎解き探偵：王国のメモリアル」をクリアする",
+			details = "ラグナロクワールドの 「謎解き探偵：王国のメモリアル」にて 全10問の謎解きをすべてクリアする。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2409 },
+		score = 1
+	},
+	[500413] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ブレイントレーニング」",
+		content = {
+			summary = "「ブレイントレーニング」でスタンプを15個獲得",
+			details = "ラグナロクワールドの 「怪盗アニバーサリーのブレイントレーニング」にて スタンプを15個獲得し、スタンプ報酬受け取り後、 ラグナロクワールド内の「マジシャン・ニルレム」に 話しかけて「課題の達成状況の確認」を行う。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2410 },
+		score = 1
+	},
+	[500414] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「Xmasジャンクパーティー」",
+		content = { summary = "？？？？？？？？？？", details = "？？？？？" },
+		resource = { [1] = { text = "" } },
+		reward = { title = 2411 },
+		score = 1
+	},
+	[500415] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「干支神様への初詣」",
+		content = {
+			summary = "干支神にて「桜もち」を交換してもらう",
+			details = "「光来山 (mt_sunrise)」の座標(134,160)にいる NPC「干支神」にて「お雑煮」と「桜もち」を 交換してもらう。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2412 },
+		score = 1
+	},
+	[500416] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「年賀状購入」",
+		content = {
+			summary = "年賀状を1度に10枚購入する",
+			details = "「泉水の国アマツ (amatsu)」の座標(59,120)にいる NPC「式」にて年賀状を一度に10枚購入する （記名あり/なし、いずれでもOK）。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2413 },
+		score = 1
+	},
+	[500417] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「年の初めの運試し(中吉)」",
+		content = {
+			summary = "おみくじ巫女さんのおみくじで「中吉」を引く",
+			details = "「泉水の国アマツ (amatsu)」の座標(47,129)にいる NPC「おみくじ巫女さん」にて、おみくじを行い 「中吉」を引く。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2414 },
+		score = 1
+	},
+	[500418] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「レイジーのおもてなし 16」",
+		content = {
+			summary = "ボルセブからの評価を得る",
+			details = "「ロイヤル・ティーパーティー(val_tea1)」の 座標(256,328)にいるNPC「レイジー」にて お客の「ボルセブ」にお菓子を渡し 「★」20個分の評価を得る。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2415 },
+		score = 1
+	},
+	[500419] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「レイジーのおもてなし 17」",
+		content = {
+			summary = "ヴェルナーからの評価を得る",
+			details = "「ロイヤル・ティーパーティー(val_tea1)」の 座標(256,328)にいるNPC「レイジー」にて お客の「ヴェルナー」にお菓子を渡し 「★」20個分の評価を得る。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2416 },
+		score = 1
+	},
+	[500420] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「レイジーのおもてなし 18」",
+		content = {
+			summary = "タティオからの評価を得る",
+			details = "「ロイヤル・ティーパーティー(val_tea1)」の 座標(256,328)にいるNPC「レイジー」にて お客の「タティオ」にお菓子を渡し 「★」20個分の評価を得る。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2417 },
+		score = 1
+	},
+	[500421] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ロイヤル・スウィーツ　15」",
+		content = {
+			summary = "「ボルセブの食指が動く怪クッキー」作成",
+			details = "「ロイヤル・ティーパーティー(val_tea1)」の 座標(288,342)にいるNPC「ショコラ=バシニオ」にて 「ボルセブの食指が動く怪クッキー」を 「15」個作ったら 「＜実績＞作ったお菓子の確認」を選択し 実績を解除する。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2418 },
+		score = 1
+	},
+	[500422] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ロイヤル・スウィーツ　16」",
+		content = {
+			summary = "「ヴェルナーのリピ確猫型ビスケット」作成",
+			details = "「ロイヤル・ティーパーティー(val_tea1)」の 座標(288,342)にいるNPC「ショコラ=バシニオ」にて 「ヴェルナーのリピ確猫型ビスケット」を 「15」個作ったら 「＜実績＞作ったお菓子の確認」を選択し 実績を解除する。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2419 },
+		score = 1
+	},
+	[500423] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ロイヤル・スウィーツ　17」",
+		content = {
+			summary = "「タティオの思い出リコッタチーズパン」作成",
+			details = "「ロイヤル・ティーパーティー(val_tea1)」の 座標(288,342)にいるNPC「ショコラ=バシニオ」にて 「タティオの思い出リコッタチーズパン」を 「15」個作ったら 「＜実績＞作ったお菓子の確認」を選択し 実績を解除する。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2420 },
+		score = 1
+	},
+	[500424] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ボルセブのサイン会参加1回目」",
+		content = {
+			summary = "ボルセブのサイン会に1回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2421 },
+		score = 1
+	},
+	[500425] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ボルセブのサイン会参加2回目」",
+		content = {
+			summary = "ボルセブのサイン会に2回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2422 },
+		score = 1
+	},
+	[500426] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ボルセブのサイン会参加3回目」",
+		content = {
+			summary = "ボルセブのサイン会に3回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2423 },
+		score = 1
+	},
+	[500427] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ボルセブのサイン会参加4回目」",
+		content = {
+			summary = "ボルセブのサイン会に4回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2424 },
+		score = 1
+	},
+	[500428] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ボルセブのサイン会参加5回目」",
+		content = {
+			summary = "ボルセブのサイン会に5回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2425 },
+		score = 1
+	},
+	[500429] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ボルセブのサイン会参加6回目」",
+		content = {
+			summary = "ボルセブのサイン会に6回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2426 },
+		score = 1
+	},
+	[500430] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ボルセブのサイン会参加7回目」",
+		content = {
+			summary = "ボルセブのサイン会に7回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2427 },
+		score = 1
+	},
+	[500431] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ボルセブのサイン会参加8回目」",
+		content = {
+			summary = "ボルセブのサイン会に8回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2428 },
+		score = 1
+	},
+	[500432] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ボルセブのサイン会参加9回目」",
+		content = {
+			summary = "ボルセブのサイン会に9回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2429 },
+		score = 1
+	},
+	[500433] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ボルセブのサイン会参加10回目」",
+		content = {
+			summary = "ボルセブのサイン会に10回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2430 },
+		score = 1
+	},
+	[500434] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ヴェルナーのサイン会参加1回目」",
+		content = {
+			summary = "ヴェルナーのサイン会に1回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2431 },
+		score = 1
+	},
+	[500435] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ヴェルナーのサイン会参加2回目」",
+		content = {
+			summary = "ヴェルナーのサイン会に2回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2432 },
+		score = 1
+	},
+	[500436] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ヴェルナーのサイン会参加3回目」",
+		content = {
+			summary = "ヴェルナーのサイン会に3回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2433 },
+		score = 1
+	},
+	[500437] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ヴェルナーのサイン会参加4回目」",
+		content = {
+			summary = "ヴェルナーのサイン会に4回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2434 },
+		score = 1
+	},
+	[500438] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ヴェルナーのサイン会参加5回目」",
+		content = {
+			summary = "ヴェルナーのサイン会に5回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2435 },
+		score = 1
+	},
+	[500439] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ヴェルナーのサイン会参加6回目」",
+		content = {
+			summary = "ヴェルナーのサイン会に6回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2436 },
+		score = 1
+	},
+	[500440] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ヴェルナーのサイン会参加7回目」",
+		content = {
+			summary = "ヴェルナーのサイン会に7回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2437 },
+		score = 1
+	},
+	[500441] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ヴェルナーのサイン会参加8回目」",
+		content = {
+			summary = "ヴェルナーのサイン会に8回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2438 },
+		score = 1
+	},
+	[500442] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ヴェルナーのサイン会参加9回目」",
+		content = {
+			summary = "ヴェルナーのサイン会に9回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2439 },
+		score = 1
+	},
+	[500443] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ヴェルナーのサイン会参加10回目」",
+		content = {
+			summary = "ヴェルナーのサイン会に10回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2440 },
+		score = 1
+	},
+	[500444] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「タティオのサイン会参加1回目」",
+		content = {
+			summary = "タティオのサイン会に1回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2441 },
+		score = 1
+	},
+	[500445] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「タティオのサイン会参加2回目」",
+		content = {
+			summary = "タティオのサイン会に2回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2442 },
+		score = 1
+	},
+	[500446] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「タティオのサイン会参加3回目」",
+		content = {
+			summary = "タティオのサイン会に3回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2443 },
+		score = 1
+	},
+	[500447] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「タティオのサイン会参加4回目」",
+		content = {
+			summary = "タティオのサイン会に4回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2444 },
+		score = 1
+	},
+	[500448] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「タティオのサイン会参加5回目」",
+		content = {
+			summary = "タティオのサイン会に5回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2445 },
+		score = 1
+	},
+	[500449] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「タティオのサイン会参加6回目」",
+		content = {
+			summary = "タティオのサイン会に6回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2446 },
+		score = 1
+	},
+	[500450] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「タティオのサイン会参加7回目」",
+		content = {
+			summary = "タティオのサイン会に7回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2447 },
+		score = 1
+	},
+	[500451] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「タティオのサイン会参加8回目」",
+		content = {
+			summary = "タティオのサイン会に8回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2448 },
+		score = 1
+	},
+	[500452] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「タティオのサイン会参加9回目」",
+		content = {
+			summary = "タティオのサイン会に9回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2449 },
+		score = 1
+	},
+	[500453] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「タティオのサイン会参加10回目」",
+		content = {
+			summary = "タティオのサイン会に10回参加する",
+			details = "サイン会チケットを手に入れたらイベント開催期間中にUrdrワールドのプロンテラの座標(148,277)にいる NPC「サイン会受付係」に話しかけて サイン会に参加する"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2450 },
+		score = 1
+	},
+	[500454] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ミラクル・バイオ・クッキング 1」",
+		content = {
+			summary = "図鑑を「1」種類埋める",
+			details = "「ロイヤル・キッチン(val_tea2)」の 座標(52,172)にいるNPC「ボルセブ」にて 「ミラクル・バイオ・クッキング」を行い 図鑑を「1」種類埋めた後、座標（57,172）にいる NPC「アイゼン・ヴェルナー」に話しかけて 「図鑑報酬の確認と受け取り」を行う。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2451 },
+		score = 1
+	},
+	[500455] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ミラクル・バイオ・クッキング 2」",
+		content = {
+			summary = "図鑑を「10」種類埋める",
+			details = "「ロイヤル・キッチン(val_tea2)」の 座標(52,172)にいるNPC「ボルセブ」にて 「ミラクル・バイオ・クッキング」を行い 図鑑を「10」種類埋めた後、座標（57,172）にいる NPC「アイゼン・ヴェルナー」に話しかけて 「図鑑報酬の確認と受け取り」を行う。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2452 },
+		score = 1
+	},
+	[500456] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ミラクル・バイオ・クッキング 3」",
+		content = {
+			summary = "図鑑を「20」種類埋める",
+			details = "「ロイヤル・キッチン(val_tea2)」の 座標(52,172)にいるNPC「ボルセブ」にて 「ミラクル・バイオ・クッキング」を行い 図鑑を「20」種類埋めた後、座標（57,172）にいる NPC「アイゼン・ヴェルナー」に話しかけて 「図鑑報酬の確認と受け取り」を行う。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2453 },
+		score = 1
+	},
+	[500457] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ミラクル・バイオ・クッキング 4」",
+		content = {
+			summary = "図鑑を「30」種類埋める",
+			details = "「ロイヤル・キッチン(val_tea2)」の 座標(52,172)にいるNPC「ボルセブ」にて 「ミラクル・バイオ・クッキング」を行い 図鑑を「30」種類埋めた後、座標（57,172）にいる NPC「アイゼン・ヴェルナー」に話しかけて 「図鑑報酬の確認と受け取り」を行う。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2454 },
+		score = 1
+	},
+	[500458] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ミラクル・バイオ・クッキング 5」",
+		content = {
+			summary = "図鑑を「40」種類埋める",
+			details = "「ロイヤル・キッチン(val_tea2)」の 座標(52,172)にいるNPC「ボルセブ」にて 「ミラクル・バイオ・クッキング」を行い 図鑑を「40」種類埋めた後、座標（57,172）にいる NPC「アイゼン・ヴェルナー」に話しかけて 「図鑑報酬の確認と受け取り」を行う。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2455 },
+		score = 1
+	},
+	[500459] = {
+		UI_Type = 0,
+		group = "GOAL_ACHIEVE",
+		major = 2,
+		minor = 1,
+		title = "期間限定「ミラクル・バイオ・クッキング 6」",
+		content = {
+			summary = "図鑑を「50」種類埋める",
+			details = "「ロイヤル・キッチン(val_tea2)」の 座標(52,172)にいるNPC「ボルセブ」にて 「ミラクル・バイオ・クッキング」を行い 図鑑を「50」種類埋めた後、座標（57,172）にいる NPC「アイゼン・ヴェルナー」に話しかけて 「図鑑報酬の確認と受け取り」を行う。"
+		},
+		resource = { [1] = { text = "" } },
+		reward = { title = 2456 },
+		score = 1
+	}
+}
+
+function main()
+	for achieveID, achieveInfo in pairs(achievement_tbl) do
+		result, msg = InsertAchieveInfo(achieveID, achieveInfo.title, achieveInfo.content.summary, achieveInfo.content.details, achieveInfo.score)
+		if not result then
+			return false, msg
+		end
+		if nil ~= achieveInfo.resource then
+			for index, resource in ipairs(achieveInfo.resource) do
+				if nil ~= resource.shortcut then
+					shortcut = resource.shortcut
+				else
+					shortcut = -1
+				end
+				if 0 == achieveInfo.UI_Type then
+					result, msg = InsertAchieveResource(achieveID, resource.text, 0, shortcut)
+				elseif 1 == achieveInfo.UI_Type then
+					result, msg = InsertAchieveResource(achieveID, resource.text, resource.count, shortcut)
+				end
+				if not result then
+					return false, msg
+				end
+			end
+		end
+		if nil ~= achieveInfo.reward then
+			if nil ~= achieveInfo.reward.item then
+				result, msg = InsertAchieveRewardItem(achieveID, achieveInfo.reward.item)
+			end
+			if nil ~= achieveInfo.reward.title then
+				result, msg = InsertAchieveRewardTitle(achieveID, achieveInfo.reward.title)
+				if not result then
+					return false, msg
+				end
+			end
+			if nil ~= achieveInfo.reward.buff then
+				result, msg = InsertAchieveRewardBuff(achieveID, achieveInfo.reward.buff)
+				if not result then
+					return false, msg
+				end
+			end
+		end
+		result, msg = InsertAchieveUIType(achieveID, achieveInfo.UI_Type, achieveInfo.group)
+		if not result then
+			return false, msg
+		end
+		result, msg = SetAchieveIDByTab(achieveID, achieveInfo.major, achieveInfo.minor)
+		if not result then
+			return false, msg
+		end
+	end
+	return true, "good"
+end
