@@ -1,0 +1,60 @@
+-- Original translation works of zackdreaver: https://github.com/zackdreaver/ROenglishRE
+-- Continuated by llchrisll at https://github.com/llchrisll/ROenglishRE
+-- This file only works if used in combination with the `Custom Lua Support`
+
+function ReqRobSprName(index)
+	if RobeNameTable_CLS ~= nil and CLSRobes == nil then
+		CLSRobes = MergeRobes(#RobeNameTable)
+	end
+	if RobeNameTable[index] == nil then
+		return ""
+	end
+	local NameMsg = RobeNameTable[index]
+	if NameMsg ~= nil then
+		return NameMsg
+	else
+		return ""
+	end
+end
+
+function ReqRobSprName_V2(index, in_bResEnglishName)
+	if in_bResEnglishName == true then
+		if RobeNameTable_Eng[index] == nil then
+			return ""
+		end
+		local NameMsg = RobeNameTable_Eng[index]
+		if NameMsg ~= nil then
+			return NameMsg
+		end
+		return ""
+	else
+		return ReqRobSprName(index)
+	end
+end
+
+function IsTopLayer(RobeID)
+	for i,v in ipairs(RobeTopLayer) do
+		if v == RobeID then
+			return true
+		end
+	end
+	for i,v in ipairs(RobeTopLayer_CLS) do
+		if v == RobeID then
+			return true
+		end
+	end
+	return false
+end
+
+function MergeRobes(size)
+	local ct = size
+	for _, v in pairs(RobeNameTable_CLS) do
+		ct = ct + 1
+		if(v ~= nil) then
+			if( RobeNameTable[ct] == nil) then
+				RobeNameTable[ct] = v
+			end
+		end
+	end
+	return 1
+end
